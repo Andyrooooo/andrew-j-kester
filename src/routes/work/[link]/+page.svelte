@@ -97,14 +97,17 @@
                 }
 
                 if (entry.isIntersecting) {
-                    if (entry.target === videoSection) {
-                    scrollAppearVideo = 'right-0'
-                    scrollAppearMobileVideo = 'left-0'
-                    videoElement.play()
-                        if (mobileVideoElement) {
-                            mobileVideoElement.play()
-                        }
-                    } else if (entry.target === carouselSection) {
+                    // if (entry.target === videoSection) {
+                    // scrollAppearVideo = 'right-0'
+                    // scrollAppearMobileVideo = 'left-0'
+                    // videoElement.play()
+                    //     if (mobileVideoElement) {
+                    //         mobileVideoElement.play()
+                    //     }
+                    // } else if (entry.target === carouselSection) {
+                    // scrollAppearCarousel = 'left-0'
+                    // } 
+                    if (entry.target === carouselSection) {
                     scrollAppearCarousel = 'left-0'
                     } 
                 }
@@ -119,7 +122,7 @@
         observer.observe(technologies)
         observer.observe(urlButtons)
 
-        observer.observe(videoSection)
+        // observer.observe(videoSection)
         observer.observe(carouselSection)
 
         return () => {
@@ -252,9 +255,9 @@
 <!----------------------------------------- mockups ---------------------------------------------->
 <div class="my-24" >
 
-    {#if currentPageData?.mobileAndDesk}
+    <!-- {#if currentPageData?.mobileAndDesk} -->
         <!-- videos including mobile -->
-        <div class="relative overflow-x-hidden">
+        <!-- <div class="relative overflow-x-hidden">
             <img src={currentPageData?.vidBack} alt="" class="w-full">
 
             <div class="absolute z-10 flex w-full top-1/2" bind:this={videoSection}></div>
@@ -278,9 +281,9 @@
             </div>
         </div>
 
-    {:else}
+    {:else} -->
         <!-- just the desktop video -->
-        <div class="relative overflow-x-hidden">
+        <!-- <div class="relative overflow-x-hidden">
             <img src={currentPageData?.vidBack} alt="" class="w-full">
 
             <div class="absolute z-10 flex w-full top-1/2" bind:this={videoSection}></div>
@@ -293,7 +296,7 @@
                 </div>
             </div>
         </div>
-    {/if}
+    {/if} -->
 
     <div class="relative w-full h-full flex justify-center items-center overflow-x-hidden" >
         <img src={currentPageData?.carBack} alt="" class="w-full">

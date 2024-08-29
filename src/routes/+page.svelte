@@ -147,9 +147,9 @@
 	</div>
 
 	<div class="h-screen relative" bind:this={home}>
-			<video class="object-cover w-full h-full opacity-50" loop autoplay >
+			<!-- <video class="object-cover w-full h-full opacity-50" loop autoplay >
 				<source src="home_video.mp4" type="video/mp4" class="">
-			</video>
+			</video> -->
 		<div class="absolute z-10 top-0 flex justify-center h-full w-full items-center">
 			<Home />
 		</div>

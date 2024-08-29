@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
     import NavigationTwo from '../../../navigation/navigationTwo.svelte'
     import FooterTwo from '../../../footer/footerTwo.svelte'
     import {workSection} from '../../../stores.js'
@@ -66,9 +66,9 @@
   }
 
 
-</script>
+</script> -->
 
-
+<!-- 
 
 <NavigationTwo />
     
@@ -99,10 +99,10 @@
         <h1 class="mb-4 text-4xl text-center">Vue Todo App</h1>
         <p class="mb-4">The Vue Tutorial App is a basic app that allows users to add items to the list. This also allows for deletion, editing, and completing of todos within a given list. This app came to fruition in an attempt to learn and understand how Vue works.</p>
         
-        <p class="pb-2 border-b border-white border-opacity-20"><a class="important">Vue</a></p>
+        <p class="pb-2 border-b border-white border-opacity-20"><a class="important">Vue</a></p> -->
 
         <!-- website link button -->
-        <div class="flex justify-center lg:justify-start mt-4 gap-4">
+        <!-- <div class="flex justify-center lg:justify-start mt-4 gap-4">
             <a 
             href="https://github.com/Andyrooooo/Basic-Vue-App"
             target="_blank"
@@ -122,10 +122,10 @@
                 <i class="fa-solid fa-chevron-right ml-2 transition-all duration-300 {moveR}"></i>
             </a>
         </div>
-    </div>
+    </div> -->
 
     <!-- demo scroll button -->
-    <div class="basis-full flex justify-center mt-4">
+    <!-- <div class="basis-full flex justify-center mt-4">
 
         <button class="py-2 px-3 hover:bg-emerald-500 border border-white border-opacity-20 bg-opacity-60 bg-zinc-900 rounded-full text-white transition-all duration-300 transition-all duration-300 hover:translate-y-[0.5rem] md:hidden"
         on:click={goToProjectS}
@@ -140,12 +140,12 @@
         </button>
 
     </div>
-</div>
+</div> -->
 
 <!-- <div class="px-4 h-screen snap-x scroll-px-4 snap-mandatory scroll-smooth flex gap-4 overflow-x-auto py-8 items-center lg:justify-center" bind:this={mockups}> -->
   <!-- body -->
-<div class="mb-12" >
-    <div bind:this={mockupsS}></div>
+<!-- <div class="mb-12" >
+    <div bind:this={mockupsS}></div> -->
     <!-- {#each images as image (image)}
         <div class="w-6/12 sm:w-5/12 md:w-4/12 lg:w-3/12 xl:w-2/12 snap-start shrink-0">
             <img src={image.imageSrc} alt="Svelte Tutorial App Prototypes" loading="lazy">
@@ -153,11 +153,11 @@
         </div>
     {/each} -->
 
-    <div class="relative">
+    <!-- <div class="relative">
         <img src="../../../vta_images/vta_background.svg" alt="" class="w-full">
-        <img src="../../../vta_images/vta_background2.svg" alt="" class="w-full lg:hidden">
+        <img src="../../../vta_images/vta_background2.svg" alt="" class="w-full lg:hidden"> -->
         <!-- <img src="../../../uvusa_images/uvu_background.svg" alt="" class="w-full"> -->
-        <div class="absolute z-10 flex justify-center items-center h-full w-full top-0" >
+        <!-- <div class="absolute z-10 flex justify-center items-center h-full w-full top-0" >
             <div class="px-4 max-w-[1200px] translate-y-[-50px] sm:translate-y-[-65px] md:translate-y-[-80px] lg:translate-y-[-95px] xl:translate-y-[-110px]" bind:this={mockupsL}>
                 <video class="rounded-lg shadow-md shadow-zinc-700 border border-zinc-400 " autoplay loop >
                     <source src="../../../vta_images/vta_video_desk.mp4" type="video/mp4" class="">
@@ -175,12 +175,12 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
 
 <!-- similar works suggestions -->
-<div class="px-4 flex justify-center items-center border-b border-white border-opacity-10">
+<!-- <div class="px-4 flex justify-center items-center border-b border-white border-opacity-10">
     <div>
         <h1 class="mb-8 text-4xl text-center">Similar Works</h1>
 
@@ -231,4 +231,4 @@
     .shadow {
         filter: drop-shadow(0px 0px 50px rgb(255, 62, 0));
     }
-</style>
+</style> -->

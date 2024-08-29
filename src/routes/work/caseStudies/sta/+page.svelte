@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
     import NavigationTwo from '../../../navigation/navigationTwo.svelte'
     import FooterTwo from '../../../footer/footerTwo.svelte'
     import {workSection} from '../../../stores.js'
@@ -122,24 +122,24 @@
             observer.disconnect()
         }
     })
-</script>
+</script> -->
 
 
 
-<NavigationTwo />
+<!-- <NavigationTwo /> -->
 
 <!-- Header -->    
-<div class="{screen} lg:h-screen px-4 flex justify-center items-center flex-wrap">
+<!-- <div class="{screen} lg:h-screen px-4 flex justify-center items-center flex-wrap"> -->
 
     <!-- background logo -->
-    <div class="absolute -z-10 h-full w-full flex justify-center items-center">
+    <!-- <div class="absolute -z-10 h-full w-full flex justify-center items-center">
         <div class="">
             <img src="../../../sta_images/sta_logo.svg" alt="Svelte logo" class="opacity-20 h-80 w-80">
         </div>
-    </div>
+    </div> -->
 
     <!-- back to main page button -->
-    <div class="absolute top-20 w-full px-4 flex justify-start {onMountGoBack} transition-all duration-1000">
+    <!-- <div class="absolute top-20 w-full px-4 flex justify-start {onMountGoBack} transition-all duration-1000">
         <button class="mt-16 py-2 pl-2 hover:text-emerald-500 text-white transition-all duration-300 transition-all duration-300" 
         on:mouseover={moveChevronL} 
         on:mouseleave={moveChevronL} 
@@ -149,10 +149,10 @@
             <i class="fa-solid fa-chevron-left mr-2 {moveL} transition-all duration-300"></i>
             Back to Work
         </button>
-    </div>
+    </div> -->
 
     <!-- header date, title, description -->
-    <div class="basis-full mt-8">
+    <!-- <div class="basis-full mt-8">
         <p class="mb-4 italic text-center">2023</p>
         <h1 class="mb-4 text-4xl text-center">Svelte Tutorial App</h1>
         <p class="mb-4 italic text-center">Web App</p>
@@ -160,10 +160,10 @@
         <div class="px-4 md:px-32 lg:px-64 xl:px-96 pt-12 text-xl">
             <p class="">The Svelte Tutorial App description</p>
         </div>
-    </div>
+    </div> -->
 
      <!-- overview scroll button -->
-     <div class="absolute {onMountButton} flex justify-center w-full transition-all duration-1000">
+     <!-- <div class="absolute {onMountButton} flex justify-center w-full transition-all duration-1000">
         <div>
             <button class="py-2 px-3 hover:bg-emerald-400 border border-white border-opacity-20 bg-opacity-60 bg-zinc-900 rounded-full text-white transition-all duration-300 transition-all duration-300 hover:translate-y-[0.5rem] animate-bounce"
             on:click={goToProject}
@@ -172,12 +172,12 @@
             </button>
         </div>
     </div>
-</div>
+</div> -->
 
 
 
 <!-- overview, goals, technologies -->
-<div bind:this={project}></div>
+<!-- <div bind:this={project}></div>
 <div class="mt-12 px-4" >
     <div class=" overflow-x-hidden">
 
@@ -229,11 +229,11 @@
                 </div>
             </div>
         </div>
-        <div bind:this={technologies}></div>
+        <div bind:this={technologies}></div> -->
 
 
         <!-- website link buttons -->
-        <div class="flex justify-center lg:justify-start mt-4 gap-4 relative {urls} transition-all duration-1000">
+        <!-- <div class="flex justify-center lg:justify-start mt-4 gap-4 relative {urls} transition-all duration-1000">
             <a 
             href="https://github.com/Andyrooooo/DGM3770_Svelte"
             target="_blank"
@@ -257,11 +257,11 @@
 
     </div>
     
-</div>
+</div> -->
 
 
 <!--------------------------- mockups ------------------------------------->
- <div class="my-24" >
+ <!-- <div class="my-24" >
 
     <div class="relative">
         <img src="../../../sta_images/sta_background.svg" alt="" class="w-full">
@@ -284,12 +284,12 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
 
 <!---------------------------- Similar Works ------------------------------->
-<div class="px-4 flex justify-center items-center border-b border-white border-opacity-10">
+<!-- <div class="px-4 flex justify-center items-center border-b border-white border-opacity-10">
     <div>
         <h1 class="mb-8 text-4xl text-center">Similar Works</h1>
 
@@ -340,4 +340,4 @@
     .shadow {
         filter: drop-shadow(0px 0px 50px rgb(255, 62, 0));
     }
-</style>
+</style> -->
