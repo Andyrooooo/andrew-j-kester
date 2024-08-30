@@ -162,7 +162,7 @@
 
     <div class=" h-full flex justify-center items-center">
         <div class="relative {onMountHeaderDetails} transition-all duration-1000">
-            <p class="mb-4 italic text-center">{currentPageData?.year}</p>
+            <p class="mb-4 italic text-center"><a class="mr-1">{currentPageData?.month}</a><a>{currentPageData?.year}</a></p>
             <h1 class="mb-4 text-4xl text-center">{currentPageData?.name}</h1>
             <p class="mb-4 italic text-center">{currentPageData?.type}</p>
 
