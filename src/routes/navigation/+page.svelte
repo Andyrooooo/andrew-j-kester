@@ -13,6 +13,7 @@
     let restructureOne = ""
     let restructureTwo = ""
     let restructureThree = ""
+    let hideName = ""
 
 
     function toggleMenu() {
@@ -57,12 +58,13 @@
     })
 
     function openIcons() {
-        iconButton = "translate-x-[-110px] opacity-0"
-        closeSocials = "block translate-x-[-88px] opacity-100"
-        restructureOne = "right-16"
-        restructureTwo = "right-8"
+        iconButton = "translate-x-[-200%] opacity-0"
+        closeSocials = "block translate-x-[-7rem] opacity-100"
+        restructureOne = "right-20"
+        restructureTwo = "right-10"
         restructureThree = "right-0"
         showIcons = "opacity-100"
+        hideName = "opacity-0 translate-y-[-100%]"
     }
 
     function closeIcons() {
@@ -72,24 +74,25 @@
         restructureTwo = "right-[1rem]"
         restructureThree = "right-[1rem]"
         showIcons = "opacity-0"
+        hideName = "opacity-100"
     }
 
     
 </script>
 
-<div class="lg:hidden ">
+<div class="lg:hidden">
     
     {#if !menuOpen}
         <div class="w-full fixed top-0 z-30">
             <div class="flex px-2 py-2 mx-4 mt-4 transition-all duration-500 rounded-full bg-black border border-white border-opacity-0 bg-opacity-0" class:sticky={scrollPosition > 5}>
                 <!-- border border-emerald-500 rounded-full bg-emerald-900 bg-opacity-80 -->
                 <div class="basis-4/12 ">
-                    <button on:click={toggleMenu} class="fa-solid fa-bars text-lg hover:text-emerald-400 rounded-full px-3 bg-black bg-opacity-0" class:stickyBTN={scrollPosition > 5}></button>
+                    <button on:click={toggleMenu} class="fa-solid fa-bars text-lg hover:text-emerald-400 rounded-full px-3 bg-black bg-opacity-0 transition-all duration-500" class:stickyBTN={scrollPosition > 5}></button>
                 </div>
 
                 <div class="basis-4/12">
                     <div class="flex justify-center">
-                        <div class="font-bold transform hover:translate-y-[-0.25rem] transition-all duration-500 hover:text-emerald-400 sm:hidden text-xl">
+                        <div class="font-bold transform hover:translate-y-[-0.25rem] transition-all duration-500 hover:text-emerald-400 sm:hidden text-xl {hideName}">
                             <a href="/" class="">AK</a>
                         </div>
                         <div class="font-bold transform hover:translate-y-[-0.25rem] transition-all duration-500 hover:text-emerald-400 hidden sm:block">
@@ -127,8 +130,8 @@
         </div>
     {/if}
 
-        <div class="bg-zinc-950 opacity-95 backblur fixed z-30 transition-all duration-400 h-full right-0 top-0 w-full shadow-sm shadow-zinc-800 border-b-1/2 border-opacity-10 border-white" style={position}>
-            
+        <div class="fixed z-30 transition-all duration-500 h-full w-full top-0 right-0 bg-zinc-950 bg-opacity-80 backdrop-blur" style={position}>
+
             <div class="flex border-1/2 border-white border-opacity-10 rounded-full px-2 py-2 mx-4 mt-4 bg-zinc-900 bg-opacity-60">
                 <div class="basis-4/12">
                     <button on:click={toggleMenu} class="fa-solid fa-x text-lg hover:text-emerald-400 rounded-full px-2 bg-zinc-950 bg-opacity-60 border-1/2 border-white border-opacity-10 transition-all duration-500"></button>
@@ -136,10 +139,10 @@
 
                 <div class="basis-4/12">
                     <div class="flex justify-center">
-                        <div class="font-bold transform hover:translate-y-[-0.25rem] transition-all duration-300 hover:text-emerald-400 sm:hidden text-xl transition-all duration-500">
+                        <div class="font-bold transform hover:translate-y-[-0.25rem] transition-all duration-500 hover:text-emerald-400 sm:hidden text-xl transition-all duration-500 {hideName}">
                             <a href="/" class="">AK</a>
                         </div>
-                        <div class="font-bold transform hover:translate-y-[-0.25rem] transition-all duration-300 hover:text-emerald-400 hidden sm:block transition-all duration-500">
+                        <div class="font-bold transform hover:translate-y-[-0.25rem] transition-all duration-500 hover:text-emerald-400 hidden sm:block transition-all duration-500">
                             <a href="/" class="">Andrew Kester</a>
                         </div>
                     </div>
@@ -177,27 +180,27 @@
                 <div class="">
                     <div class="highlight mb-4 font-bold">
                         <button on:click={scrollHome} class="hover:text-emerald-400 transition-all duration-500 w-full text-left">Home</button>
-                        <div class="border-b-2 transition-all duration-300 border-emerald-400 mb-4"></div>
+                        <div class="border-b-2 transition-all duration-500 border-emerald-400 mb-4"></div>
                     </div>
                     
                     <div class="highlight mb-4 font-bold">
                         <button on:click={scrollAbout} class="hover:text-emerald-400 transition-all duration-500 w-full text-left">About</button>
-                        <div class="border-b-2 transition-all duration-300 border-emerald-400"></div>
+                        <div class="border-b-2 transition-all duration-500 border-emerald-400"></div>
                     </div>
 
                     <div class="highlight mb-4 hover:text-emerald-400 font-bold transition-all duration-500">
                         <button on:click={scrollWork} class=" w-full text-left">Work</button>
-                        <div class="border-b-2 transition-all duration-300 border-emerald-400"></div>
+                        <div class="border-b-2 transition-all duration-500 border-emerald-400"></div>
                     </div>
 
                     <div class="highlight mb-2 pb-2 hover:text-emerald-400 font-bold transition-all duration-500 w-full text-left">
                         <button on:click={scrollContact} class=" w-full text-left">Contact</button>
-                        <div class="border-b-2 transition-all duration-300 border-emerald-400"></div>
+                        <div class="border-b-2 transition-all duration-500 border-emerald-400"></div>
                     </div>
 
                     <div class="highlight mb-4 font-bold transition-all duration-500">
                         <a class="hover:text-emerald-400 block w-full text-left" href="MyResume2024.pdf" target="_blank">Resume</a>
-                        <div class="border-b-2 transition-all duration-300 border-emerald-400"></div>
+                        <div class="border-b-2 transition-all duration-500 border-emerald-400"></div>
                     </div>
                 </div>
                 
@@ -216,29 +219,29 @@
                 <ul class="flex">
                     <li class="mr-4 highlight hover:text-emerald-400 transition-all duration-500">
                         <button  on:click={scrollHome} >Home</button>
-                        <div class="border-b-2 transition-all duration-300 border-emerald-400"></div>
+                        <div class="border-b-2 transition-all duration-500 border-emerald-400"></div>
                     </li>
         
                     <li class="mr-4 highlight hover:text-emerald-400 transition-all duration-500">
                         <button on:click={scrollAbout} >About</button>
-                        <div class="border-b-2 transition-all duration-300 border-emerald-400"></div>
+                        <div class="border-b-2 transition-all duration-500 border-emerald-400"></div>
                     </li>
                     
                     <li class="mr-4 highlight">
                         <button on:click={scrollWork} class="hover:text-emerald-400 transition-all duration-500">Work</button>
-                        <div class="border-b-2 transition-all duration-300 border-emerald-400"></div>
+                        <div class="border-b-2 transition-all duration-500 border-emerald-400"></div>
                     </li>
 
                     <li class="mr-4 highlight">
                         <button on:click={scrollContact} class="hover:text-emerald-400 transition-all duration-500">Contact</button>
-                        <div class="border-b-2 transition-all duration-300 border-emerald-400"></div>
+                        <div class="border-b-2 transition-all duration-500 border-emerald-400"></div>
                     </li>
 
                     <div class=" border-r border-opacity-30 border-white mr-4"></div>
 
                     <li class="mr-4 highlight hover:text-emerald-400 transition-all duration-500">
                         <a href="MyResume2024.pdf" target="_blank">Resume</a>
-                        <div class="border-b-2 transition-all duration-300 border-emerald-400"></div>
+                        <div class="border-b-2 transition-all duration-500 border-emerald-400"></div>
                     </li>
                 </ul>
             </nav>

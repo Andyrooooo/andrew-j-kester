@@ -12,6 +12,8 @@
 	import {messageModal, message} from './contact/messageModal.js'
 	import {workSection, aboutSection, contactSection} from './stores.js'
 
+	let isLoading = true
+
 	let home
 	let about
 	let work
@@ -50,8 +52,10 @@
 	}
 
 	function handleScroll() {
-		scrollPosition = window.scrollY
-		smNAV = window.scrollY > about.offsetTop
+		scrollPosition = window.scrollY;
+        if (about) {
+            smNAV = window.scrollY > about.offsetTop;
+        }
 	}
 
 	
@@ -73,25 +77,31 @@
     }
 
 	onMount(() => {
-		// checks when the page is mounted and looks if the store is true or false and will scroll accordingly
-		tick().then(() => {
-			if ($workSection === true) {
-				scrollToWork()
-			}
-			else if ($aboutSection === true) {
-				scrollToAbout()
-			}
-			else if ($contactSection === true) {
-				scrollToContact()
-			}
-		})
-		
+		setTimeout(() => {
+            isLoading = false
+        }, 800)
 
-		window.addEventListener('scroll', handleScroll)
-		handleScroll()
-		return () => {
-			window.removeEventListener('scroll', handleScroll)
-		}
+		setTimeout(() => {
+			// checks when the page is mounted and looks if the store is true or false and will scroll accordingly
+			tick().then(() => {
+				if ($workSection === true) {
+					scrollToWork()
+				}
+				else if ($aboutSection === true) {
+					scrollToAbout()
+				}
+				else if ($contactSection === true) {
+					scrollToContact()
+				}
+			})
+			
+
+			window.addEventListener('scroll', handleScroll)
+			handleScroll()
+			return () => {
+				window.removeEventListener('scroll', handleScroll)
+			}
+		}, 900)
 	})
 
 	// reactive statement will also check if the store is true or false
@@ -113,65 +123,72 @@
 
 </script>
 
-<div class="">
-	{#if smNAV}
-		<div class="fixed right-4 top-1/2 z-30 h-full hidden lg:block">
-			<nav class="bg-zinc-900 rounded-full py-4 border border-white border-opacity-20 bg-opacity-60 backdrop-blur-sm shadow-md">
-				<ul class="px-4">
-					<li class="text-center hover:text-emerald-600 pb-2" class:currentPage={activeSection === 'home'}>
-						<button class=" transition-all duration-300" on:click={scrollToHome}>H</button>
-					</li>
-					<li class="text-center hover:text-emerald-600 pb-2" class:currentPage={activeSection === 'about'}>
-						<button class=" transition-all duration-300" on:click={scrollToAbout}>A</button>
-					</li>
-					<li class="text-center hover:text-emerald-600 pb-2" class:currentPage={activeSection === 'work'}>
-						<button class=" transition-all duration-300" on:click={scrollToWork}>W</button>
-					</li>
-					<li class="text-center hover:text-emerald-600 pb-2 mb-2 border-b border-opacity-30 border-white" class:currentPage={activeSection === 'contact'}>
-						<button class=" transition-all duration-300" on:click={scrollToContact}>C</button>
-					</li>
-					<li class="text-center hover:text-emerald-600">
-						<a href="MyResume2024.pdf" target="_blank">R</a>
-					</li>
-				</ul>
-			</nav>
+{#if isLoading}
+    <div class="flex justify-center items-center h-screen shadow-lg shadow-emerald-400">
+        <img src="../../../portfolio_logo_lg.png" alt="Andrew's first and last inital" class="border p-2 rounded-md shadow-md border-emerald-400 animate-pulse w-20 h-20 shadow-2xl shadow-loadShad shadow-[0_0_75px_25px_rgba(52,211,153,0.25)]">
+    </div>
+{:else}
+
+	<div class="">
+		{#if smNAV}
+			<div class="fixed right-4 top-1/2 z-30 h-full hidden lg:block">
+				<nav class="bg-zinc-900 rounded-full py-4 border border-white border-opacity-20 bg-opacity-60 backdrop-blur-sm shadow-md">
+					<ul class="px-4">
+						<li class="text-center hover:text-emerald-600 pb-2" class:currentPage={activeSection === 'home'}>
+							<button class=" transition-all duration-500" on:click={scrollToHome}>H</button>
+						</li>
+						<li class="text-center hover:text-emerald-600 pb-2" class:currentPage={activeSection === 'about'}>
+							<button class=" transition-all duration-500" on:click={scrollToAbout}>A</button>
+						</li>
+						<li class="text-center hover:text-emerald-600 pb-2" class:currentPage={activeSection === 'work'}>
+							<button class=" transition-all duration-500" on:click={scrollToWork}>W</button>
+						</li>
+						<li class="text-center hover:text-emerald-600 pb-2 mb-2 border-b border-opacity-30 border-white" class:currentPage={activeSection === 'contact'}>
+							<button class=" transition-all duration-500" on:click={scrollToContact}>C</button>
+						</li>
+						<li class="text-center hover:text-emerald-600">
+							<a href="MyResume2024.pdf" target="_blank">R</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		{/if}
+
+		<div class="h-full w-full fixed z-40 bg-black bg-opacity-70 {popUpBackground}"></div>
+
+		<Navigation on:scrollHome={scrollToHome} on:scrollAbout={scrollToAbout} on:scrollWork={scrollToWork} on:scrollContact={scrollToContact}/>
+
+		<div class="{popUpModal} fixed z-50 flex justify-center h-full w-full items-center transition-all duration-500">
+			<Modal />
 		</div>
-	{/if}
 
-	<div class="h-full w-full fixed z-40 bg-black bg-opacity-70 {popUpBackground}"></div>
+		<div class="h-screen relative" bind:this={home}>
+				<!-- <video class="object-cover w-full h-full opacity-40" loop autoplay muted>
+					<source src="home_video2.mp4" type="video/mp4" class="">
+				</video> -->
+			<div class="absolute z-10 top-0 flex justify-center h-full w-full items-center">
+				<Home />
+			</div>
+		</div>
 
-	<Navigation on:scrollHome={scrollToHome} on:scrollAbout={scrollToAbout} on:scrollWork={scrollToWork} on:scrollContact={scrollToContact}/>
+		<div class="bg-black border-y border-white border-opacity-10" bind:this={about}>
+			<About />
+		</div>
 
-	<div class="{popUpModal} fixed z-50 flex justify-center h-full w-full items-center transition-all duration-300">
-		<Modal />
-	</div>
+		<div class="bg-black border-b border-white border-opacity-10 pb-4" bind:this={work} id="workSection">
+			<Work />
+		</div>
 
-	<div class="h-screen relative" bind:this={home}>
-			<video class="object-cover w-full h-full opacity-50" loop autoplay muted>
-				<source src="home_video2.mp4" type="video/mp4" class="">
-			</video>
-		<div class="absolute z-10 top-0 flex justify-center h-full w-full items-center">
-			<Home />
+		<div class="bg-black border-b border-white border-opacity-10" bind:this={contact}>
+			<Contact />
+		</div>
+
+		<div class="bg-black" >
+			<Footer on:scrollHome={scrollToHome} on:scrollAbout={scrollToAbout} on:scrollWork={scrollToWork} on:scrollContact={scrollToContact}/>
 		</div>
 	</div>
 
-	<div class="bg-black border-b border-white border-opacity-10" bind:this={about}>
-		<About />
-	</div>
-
-	<div class="bg-black border-b border-white border-opacity-10 pb-4" bind:this={work} id="workSection">
-		<Work />
-	</div>
-
-	<div class="bg-black border-b border-white border-opacity-10" bind:this={contact}>
-		<Contact />
-	</div>
-
-	<div class="bg-black" >
-		<Footer on:scrollHome={scrollToHome} on:scrollAbout={scrollToAbout} on:scrollWork={scrollToWork} on:scrollContact={scrollToContact}/>
-	</div>
-</div>
-
+{/if}
 
 <style>
 	.currentPage {

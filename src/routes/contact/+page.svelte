@@ -86,7 +86,7 @@
                 </div>
             
                 <div class="flex justify-center my-12">                    
-                    <button class=" py-2 px-6 hover:bg-emerald-500 border border-white rounded-full text-white transition-all duration-300 hover:translate-y-[-0.5rem] border-opacity-20 bg-zinc-900 bg-opacity-60">Submit</button>
+                    <button class=" py-2 px-6 hover:bg-emerald-500 border border-white rounded-full text-white transition-all duration-500 hover:translate-y-[-0.5rem] border-opacity-20 bg-zinc-900 bg-opacity-60">Submit</button>
                 </div>
             </form>
         </div>

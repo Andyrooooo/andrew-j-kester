@@ -14,7 +14,7 @@ export const works = [
         type: 'Web App',
         projDesc: "The UVU Scheduling App is a pre-scheduling tool which allows the Utah Valley University instructors to plan, schedule, change, and distribute upcoming courses for a more streamlined process.",
         projOver: 'The UVU Scheduling App is a rebuild of the current scheduling software used by the UVU instructors. The current software has been in dire need of an upgrade to allow for a better experience for the instructors. The result has left many instructors to rely on alternatives like Microsoft Excel and Google Sheets which are then distributed out in the form of spreadsheets. Those spreadsheets are created by the <a class="text-important">scheduler</a> who is given schedules on a <a class="text-important">requested basis</a> by the instructors via email or in person request. This method is frought with issues that cause many headaches and conflicts. Once I met with the instructor in charge of the scheduling, the design team and I came up with curated solutions that would tackle the needs and wants of the instructors while also including features and components that go beyond their expectations. ',
-        projGoals: '<ul class="list-disc pl-6"><li class="mb-1">Develop a new app and system allowing instructors to schedule and maintain their classes</li><li class="mb-1">Achieve a design that is visually straightforward and easy to navigate</li><li class="mb-1">Create filtering options for ease of use </li><li class="mb-1">Create a component to allow CSV imports for pre-scheduled classes</li><li class="mb-1">Allow instructors the ability to edit, remove, and/or add existing data into the schedule builds</li><li class="mb-1">Completed schedules should be able to be distributed by digital or physical copies</li></ul>',
+        projGoals: '<ul class="list-disc pl-6"><li class="mb-4">Develop a new app and system allowing instructors to schedule and maintain their classes</li><li class="mb-4 ">Achieve a design that is visually straightforward and easy to navigate</li><li class="mb-4">Create filtering options for ease of use </li><li class="mb-4 ">Create a component to allow CSV imports for pre-scheduled classes</li><li class="mb-4">Allow instructors the ability to edit, remove, and/or add existing data into the schedule builds</li><li class="mb-4 ">Completed schedules should be able to be distributed by digital or physical copies</li></ul>',
         projTech: '<p>Sveltekit</p><p>TypeScript</p><p>Node</p><p>Skeleton UI</p><p>MongoDB</p>',
         projSrcCode: "https://github.com/Andyrooooo/test_uvu_app",
         projApp: "https://test-uvu-app.vercel.app/",
@@ -22,6 +22,7 @@ export const works = [
         mockVid: "../../uvusa_images/uvusa_video2.mp4",
         carBack: "../../uvusa_images/uvu_background3.svg",
         mobileAndDesk: false,
+        projLink: "../../uvusa_link.svg"
     },
 
 
@@ -47,7 +48,7 @@ export const works = [
         type: 'Web App',
         projDesc: 'Titled <a class="text-important">Andrew Kesters listings</a>, this app is a fullstack application that allows users to reserve homes, apartments, and everything in between at the touch of a button. While your at it, you can also view nearby restaurants and save time looking for a place to eat.',
         projOver: 'This project was created to showcase my skills in fullstack development and to do so, I used sample data from the MongoDB Atlas database and built an experience around it. The app builds on the a previous project the <a class="text-important">Svelte Tutorial App</a> and adds more features and functionality to it using the tools and technologies I have learned in the DGM program. I Learned a great deal about server side logic, routing, database management, and even some tricks for front-end development that benefitted me greatly from taking on this project while also having an exciting time doing so. <a class="text-important">(Keep in mind the reservations are just to show what could be and are not actual reserverations)</a>',
-        projGoals: '<ul class="list-disc pl-6"><li class="mb-1">Effectively use conditional logic, TypeScript array methods, and front-end framework elements to render large lists on the web client.</li><li class="mb-1">Work with the proper libraries to create and manage the SvelteKit front-end portion of your project using a real development toolset.</li><li class="mb-1">Work with NPM, SvelteKit, and MongoDB to create and manage the back-end portion of your project.</li><li class="mb-1"><ul><li class="mb-1">Create, use, and manage:</li><li class="mb-1 ml-4">A custom MongoDB Data Model and associated API using data you have gathered/organized (could be from some external source via API call).</li><li class="mb-1 ml-4">An Authentication workflow using OAuth and a MongoDB users collection to signup, login, and logout users.</li><li class="mb-1 ml-4">A mix of server page, API, layout, and page routes within your SvelteKit code.</li><li class="mb-1 ml-4">Routes with layouts, themes, color schemes, and user interactions that give a great experience.</li><li class="mb-1 ml-4">Create a front door (with ability to Authenticate) and then a way to maneuver and navigate between cohesive routes</li><li class="mb-1 ml-4">Implement route guarding (Can\'t reach certain routes unless logged in)</li><li class="mb-1 ml-4">Any modals, pop ups, toasts or other items brought up in the UI, have an obvious way for the user to get rid of them</li><li class="mb-1 ml-4">Add a favicon that is different than the one that comes with Skeleton UI.</li></ul></li></ul>',
+        projGoals: '<ul class="list-disc pl-6"><li class="mb-4">Effectively use conditional logic, TypeScript array methods, and front-end framework elements to render large lists on the web client.</li><li class="mb-4">Work with the proper libraries to create and manage the SvelteKit front-end portion of your project using a real development toolset.</li><li class="mb-4">Work with NPM, SvelteKit, and MongoDB to create and manage the back-end portion of your project.</li><li class="mb-4"><ul><li class="mb-4">Create, use, and manage:</li><li class="mb-4 ml-4">A custom MongoDB Data Model and associated API using data you have gathered/organized (could be from some external source via API call).</li><li class="mb-4 ml-4">An Authentication workflow using OAuth and a MongoDB users collection to signup, login, and logout users.</li><li class="mb-4 ml-4">A mix of server page, API, layout, and page routes within your SvelteKit code.</li><li class="mb-4 ml-4">Routes with layouts, themes, color schemes, and user interactions that give a great experience.</li><li class="mb-4 ml-4">Create a front door (with ability to Authenticate) and then a way to maneuver and navigate between cohesive routes</li><li class="mb-4 ml-4">Implement route guarding (Can\'t reach certain routes unless logged in)</li><li class="mb-4 ml-4">Any modals, pop ups, toasts or other items brought up in the UI, have an obvious way for the user to get rid of them</li><li class="mb-4 ml-4">Add a favicon that is different than the one that comes with Skeleton UI.</li></ul></li></ul>',
         projTech: '<p>Sveltekit</p><p>Node</p><p>OAuth</p><p>MongoDB</p>',
         projSrcCode: "https://github.com/Andyrooooo/fullstack_svelte_app",
         projApp: "https://fullstack-svelte-app.vercel.app/",
@@ -56,6 +57,7 @@ export const works = [
         mockMobileVid: "../../fssa_images/fssa_video_mobile2.mp4",
         carBack: "../../fssa_images/background2.svg",
         mobileAndDesk: true,
+        projLink: "../../fssa_link.svg"
     },
 
 
@@ -78,7 +80,7 @@ export const works = [
         type: 'Web App',
         projDesc: 'The Svelte Tutorial App is a product of the svelte.dev tutorial. It showcases all the basics of Svelte/Sveltekit in easy to read components, with an additional <a class="text-important">terms</a> page for those unfamiliar with the Svelte/JavaScript terminology.',
         projOver: 'This app uses section one which starts with the basics over to animations in section eleven of the Svelte tutorial. Every nested component inside each component of the app is a lesson from the tutorial brought to fruition in the form of an example to exibit the capabilites. Going with the theme of a tutorial app I believed it to be appropriate to add a <a class="text-important">terms</a> page for those who aren\'t as familiar with Svelte. Finally, to achieve a more streamlined experience, I integrated OAuth to allow users to login and sign out with an easy to use authentication linked to GitHub.',
-        projGoals: '<ul class="list-disc pl-6"><li class="mb-1">Effectively use Svelte\'s components and routing mechanisms to document basic Svelte functionality.</li><li class="mb-1">Properly organize the code using custom components and multiple functional SvelteKit routes.</li><li class="mb-1">Demonstrate multiple examples of captured user events (click, mouse over, etc.) that cause some action to occur.</li><li class="mb-1">Provide examples of data bound to UI elements.</li><li class="mb-1">Utilize lifecycle functions and writable stores with examples to showcase these.</li><li class="mb-1">Use a mix of motion, animations and transitions to enhance some aspects of the project.</li><li class="mb-1">Connect to an outside API using a mix of SvelteKit loading functions and display retrieved data in the UI.</li><li class="mb-1">Use OAuth to allow users of your app to login using an OAuth provider such as GitHub.</li><li class="mb-1">Design and Develop the major features of the app as uniquely as possible and exhibit great UX/UI design. </li></ul>',
+        projGoals: '<ul class="list-disc pl-6"><li class="mb-4">Effectively use Svelte\'s components and routing mechanisms to document basic Svelte functionality.</li><li class="mb-4">Properly organize the code using custom components and multiple functional SvelteKit routes.</li><li class="mb-4">Demonstrate multiple examples of captured user events (click, mouse over, etc.) that cause some action to occur.</li><li class="mb-4">Provide examples of data bound to UI elements.</li><li class="mb-4">Utilize lifecycle functions and writable stores with examples to showcase these.</li><li class="mb-4">Use a mix of motion, animations and transitions to enhance some aspects of the project.</li><li class="mb-4">Connect to an outside API using a mix of SvelteKit loading functions and display retrieved data in the UI.</li><li class="mb-4">Use OAuth to allow users of your app to login using an OAuth provider such as GitHub.</li><li class="mb-4">Design and Develop the major features of the app as uniquely as possible and exhibit great UX/UI design. </li></ul>',
         projTech: '<p>Svlete</p><p>OAuth</p><p>typeScript</p><p>Skeleton UI</p>',
         projSrcCode: "https://github.com/Andyrooooo/DGM3770_Svelte",
         projApp: "https://dgm-3770-svelte.vercel.app/",
@@ -87,6 +89,7 @@ export const works = [
         mockMobileVid: "../../sta_images/sta_video_mobile.mp4",
         carBack: "../../sta_images/background2.jpg",
         mobileAndDesk: true,
+        projLink: "../../sta_link2.svg"
     },
 
 
@@ -109,7 +112,7 @@ export const works = [
         type: 'Web App',
         projDesc: "Built completely with vanilla JavaScript, the Time Tracker App is a project that allows users to track their time spent on tasks with a simple interface.",
         projOver: 'The app comes equipped with a timer and start button to initiate tracking, this can also be customized by adding a title, description, and/or a project name to be more easily identifiable. These categories and project names can be modified, removed, and even add new ones. Individual tasks can also be modified and deleted at the users discretion. Key notes to identify will concern the three total times that will be available when a task has been created. This is broken down into <a class="text-important">weekly total time</a>, <a class="text-important">daily total time</a>, and <a class="text-important">task total time</a>. This idea allows users to more easily break down their time alloted to each individuals own needs. The final component of the app is the note component which will allow users to stay on top of key events. ',
-        projGoals: '<ul class="list-disc pl-6"><li class="mb-1">15 features, from the viewpoint of the enduser, that are fully functional.</li><li class="mb-1">Must have an API Server utilizing all types of endpoints </li><ul><li class="mb-1 ml-4">Create</li><li class="mb-1 ml-4">Read</li><li class="mb-1 ml-4">Update</li><li class="mb-1 ml-4">Delete</li></ul><li class="mb-1">Vanilla JS on the Frontend</li><li class="mb-1">Frontend must be "well designed"</li></ul>',
+        projGoals: '<ul class="list-disc pl-6"><li class="mb-4">15 features, from the viewpoint of the enduser, that are fully functional.</li><li class="mb-4">Must have an API Server utilizing all types of endpoints </li><ul><li class="mb-4 ml-4">Create</li><li class="mb-4 ml-4">Read</li><li class="mb-4 ml-4">Update</li><li class="mb-4 ml-4">Delete</li></ul><li class="mb-4">Vanilla JS on the Frontend</li><li class="mb-4">Frontend must be "well designed"</li></ul>',
         projTech: '<p>JavaScript</p><p>Node</p>',
         projSrcCode: "https://github.com/Andyrooooo/trackerApp",
         projApp: "https://tracker-app-alpha.vercel.app/",
@@ -118,6 +121,7 @@ export const works = [
         mockMobileVid: "../../tta_images/tta_video_mobile.mp4",
         carBack: "../../tta_images/background2.jpg",
         mobileAndDesk: true,
+        projLink: "../../tta_link.svg"
     },
 
 
@@ -137,7 +141,7 @@ export const works = [
         type: 'Web App',
         projDesc: "A simple blogging app that allows users to create, edit, and delete posts.",
         projOver: 'The Nonsense Blog App is a project that was created to test my skills with the React library. The app allows you to create, edit, delete, like, and comment on posts. It as well comes with persistent data through the use of an API server.',
-        projGoals: '<ul class="list-disc pl-6"><li class="mb-1">15 features that require JavaScript (not HTML or CSS) that are fully functional.</li><li class="mb-1">Must use React as the library</li><li class="mb-1">Frontend must be "well designed" </li><li class="mb-1">Must be hosted live with a public URL</li><li class="mb-1">Allow the app to have persistent data through API server/hosting</li></ul>',
+        projGoals: '<ul class="list-disc pl-6"><li class="mb-4">15 features that require JavaScript (not HTML or CSS) that are fully functional.</li><li class="mb-4">Must use React as the library</li><li class="mb-4">Frontend must be "well designed" </li><li class="mb-4">Must be hosted live with a public URL</li><li class="mb-4">Allow the app to have persistent data through API server/hosting</li></ul>',
         projTech: '<p>React</p><p>Glitch</p>',
         projSrcCode: "https://github.com/Andyrooooo/react-blog-project",
         projApp: "https://react-project-blog-dgm3780.netlify.app/",
@@ -146,6 +150,7 @@ export const works = [
         mockMobileVid: "../../nba_images/nba_video_mobile.mp4",
         carBack: "../../nba_images/background2.jpg",
         mobileAndDesk: true,
+        projLink: "../../nba_link.svg"
     },
 
 
@@ -163,7 +168,7 @@ export const works = [
         type: 'Web App',
         projDesc: "A todo app to allow users to create, edit, delete, and complete todos.",
         projOver: 'The Vue Todo app is a project I created to test my abilities with a new framework. ',
-        projGoals: '<ul class="list-disc pl-6"><li class="mb-1">User can view the todos</li><li class="mb-1">User can add todos</li><li class="mb-1">User can edit todos</li><li class="mb-1">User can complete todos</li><li class="mb-1">User can delete todos</li></ul>',
+        projGoals: '<ul class="list-disc pl-6"><li class="mb-4">User can view the todos</li><li class="mb-4">User can add todos</li><li class="mb-4">User can edit todos</li><li class="mb-4">User can complete todos</li><li class="mb-4">User can delete todos</li></ul>',
         projTech: '<p>Vue</p>',
         projSrcCode: "https://github.com/Andyrooooo/Basic-Vue-App",
         projApp: "https://basic-vue-app-dgm3780.netlify.app/",
@@ -172,5 +177,6 @@ export const works = [
         mockMobileVid: "../../vta_images/vta_video_mobile.mp4",
         carBack: "../../vta_images/background2.jpg",
         mobileAndDesk: true,
+        projLink: "../../vta_link.svg"
     },
 ]
