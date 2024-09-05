@@ -6,6 +6,7 @@ dotenv.config()
 export async function POST({request}) {
     const newMessage = await request.json()
     let message
+    let mailOptions
 
     const transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -15,11 +16,20 @@ export async function POST({request}) {
         }
     })
 
-    const mailOptions = {
-        from: newMessage.email,
-        to: 'wheelbiter666@gmail.com',
-        subject: 'New Message From Portfolio Site',
-        text: `From: ${newMessage.name}\n\n${newMessage.email}\n\nMessage:\n${newMessage.message}`,
+    if (newMessage.type === 'contact') {
+        mailOptions = {
+            from: newMessage.email,
+            to: 'wheelbiter666@gmail.com',
+            subject: 'New Contact message From the Website',
+            text: `From: ${newMessage.name}\n\n${newMessage.email}\n\nMessage:\n${newMessage.message}`,
+        }
+    } else if (newMessage.type === 'error') {
+        mailOptions = {
+            from: newMessage.email,
+            to: 'wheelbiter666@gmail.com',
+            subject: 'Error Message',
+            text: `From: ${newMessage.name}\n\n${newMessage.email}\n\nMessage:\n${newMessage.message}`,
+        }
     }
 
     transporter.sendMail(mailOptions, (error, info) => {

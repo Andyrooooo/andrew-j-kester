@@ -87,10 +87,10 @@
 
                 <div class="basis-4/12">
                     <div class="flex justify-center">
-                        <div class="font-bold transform hover:translate-y-[-0.25rem] transition-all duration-500 hover:text-emerald-400 sm:hidden text-xl {hideName}">
+                        <div class="font-bold transform hover:translate-y-[-0.25rem] transition-all duration-500 hover:text-emerald-400 sm:hidden text-xl {hideName} font-test16">
                             <a href="/" class="">AK</a>
                         </div>
-                        <div class="font-bold transform hover:translate-y-[-0.25rem] transition-all duration-500 hover:text-emerald-400 hidden sm:block">
+                        <div class="font-bold transform hover:translate-y-[-0.25rem] transition-all duration-500 hover:text-emerald-400 hidden sm:block font-test16">
                             <a href="/" class="">Andrew Kester</a>
                         </div>
                     </div>
@@ -134,10 +134,10 @@
 
                 <div class="basis-4/12">
                     <div class="flex justify-center">
-                        <div class="font-bold transform hover:translate-y-[-0.25rem] transition-all duration-500 hover:text-emerald-400 sm:hidden text-xl {hideName}">
+                        <div class="font-bold transform hover:translate-y-[-0.25rem] transition-all duration-500 hover:text-emerald-400 sm:hidden text-xl {hideName} font-test16">
                             <a href="/" class="">AK</a>
                         </div>
-                        <div class="font-bold transform hover:translate-y-[-0.25rem] transition-all duration-500 hover:text-emerald-400 hidden sm:block">
+                        <div class="font-bold transform hover:translate-y-[-0.25rem] transition-all duration-500 hover:text-emerald-400 hidden sm:block font-test16">
                             <a href="/" class="">Andrew Kester</a>
                         </div>
                     </div>
@@ -174,27 +174,27 @@
             <div class="p-4 flex flex-col justify-between mt-4">
                 <div class="">
                     <div class="highlight mb-4 font-bold">
-                        <a href="/" class="hover:text-emerald-400 transition-all duration-500 w-full text-left">Home</a>
+                        <a href="/" class="hover:text-emerald-400 transition-all duration-500 w-full text-left font-test16">Home</a>
                         <div class="border-b-2 transition-all duration-500 border-emerald-400 mb-4"></div>
                     </div>
                     
                     <div class="highlight mb-4 font-bold">
-                        <button on:click={navigateToAbout} class="hover:text-emerald-400 transition-all duration-500 w-full text-left">About</button>
+                        <button on:click={navigateToAbout} class="hover:text-emerald-400 transition-all duration-500 w-full text-left font-test16">About</button>
                         <div class="border-b-2 transition-all duration-500 border-emerald-400"></div>
                     </div>
 
-                    <div class="highlight mb-4 hover:text-emerald-400 font-bold transition-all duration-500">
+                    <div class="highlight mb-4 hover:text-emerald-400 font-bold transition-all duration-500 font-test16">
                         <button on:click={navigateToWork} class=" w-full text-left">Work</button>
                         <div class="border-b-2 transition-all duration-500 border-emerald-400"></div>
                     </div>
 
-                    <div class="highlight mb-2 pb-2 hover:text-emerald-400 font-bold transition-all duration-500 w-full text-left">
+                    <div class="highlight mb-2 pb-2 hover:text-emerald-400 font-bold transition-all duration-500 w-full text-left font-test16">
                         <button on:click={navigateToContact} class=" w-full text-left">Contact</button>
                         <div class="border-b-2 transition-all duration-500 border-emerald-400"></div>
                     </div>
 
-                    <div class="highlight mb-4 font-bold transition-all duration-500">
-                        <a class="hover:text-emerald-400 block w-full text-left" href="../../MyResume2024.pdf" target="_blank">Resume</a>
+                    <div class="highlight mb-4 font-bold transition-all duration-500 font-test16">
+                        <a class="hover:text-emerald-400 block w-full text-left" href="../../Andrew_Kester_Resume.pdf" target="_blank">Resume</a>
                         <div class="border-b-2 transition-all duration-500 border-emerald-400"></div>
                     </div>
                 </div>
@@ -213,29 +213,29 @@
             <nav class="basis-4/12">
                 <ul class="flex">
                     <li class="mr-4 highlight">
-                        <a class=" hover:text-emerald-400 transition-all duration-500" href="/" >Home</a>
+                        <a class=" hover:text-emerald-400 transition-all duration-500 font-test16" href="/" >Home</a>
                         <div class="border-b-2 transition-all duration-500 border-emerald-400"></div>
                     </li>
         
                     <li class="mr-4 highlight">
-                        <button on:click={navigateToAbout} class=" hover:text-emerald-400 transition-all duration-500">About</button>
+                        <button on:click={navigateToAbout} class=" hover:text-emerald-400 transition-all duration-500 font-test16">About</button>
                         <div class="border-b-2 transition-all duration-500 border-emerald-400"></div>
                     </li>
                     
                     <li class="mr-4 highlight">
-                        <button on:click={navigateToWork} class="hover:text-emerald-400 transition-all duration-500">Work</button>
+                        <button on:click={navigateToWork} class="hover:text-emerald-400 transition-all duration-500 font-test16">Work</button>
                         <div class="border-b-2 transition-all duration-500 border-emerald-400"></div>
                     </li>
 
                     <li class="mr-4 highlight">
-                        <button on:click={navigateToContact} class="hover:text-emerald-400 transition-all duration-500">Contact</button>
+                        <button on:click={navigateToContact} class="hover:text-emerald-400 transition-all duration-500 font-test16">Contact</button>
                         <div class="border-b-2 transition-all duration-500 border-emerald-400"></div>
                     </li>
 
                     <div class=" border-r border-opacity-30 border-white mr-4"></div>
 
-                    <li class="mr-4 highlight hover:text-emerald-400 transition-all duration-500">
-                        <a href="../../MyResume2024.pdf" target="_blank">Resume</a>
+                    <li class="mr-4 highlight hover:text-emerald-400 transition-all duration-500 font-test16">
+                        <a href="../../Andrew_Kester_Resume.pdf" target="_blank">Resume</a>
                         <div class="border-b-2 transition-all duration-500 border-emerald-400"></div>
                     </li>
                 </ul>
@@ -243,7 +243,7 @@
     
             <div class="basis-4/12">
                 <div class="flex justify-center">
-                    <a href="/" class="font-bold transform hover:translate-y-[-0.25rem] transition-all duration-500 hover:text-emerald-400">Andrew Kester</a>
+                    <a href="/" class="font-bold transform hover:translate-y-[-0.25rem] transition-all duration-500 hover:text-emerald-400 font-test16">Andrew Kester</a>
                 </div>
             </div>
         

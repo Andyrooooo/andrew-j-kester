@@ -4,7 +4,8 @@
     let formData = {
         name: '',
         email: '',
-        message: ''
+        message: '',
+        type: 'contact'
     }
 
     async function sendMessage() {
@@ -42,16 +43,16 @@
 </script>
 
 
-<div class="md:h-screen">
+<div class="h-screen">
 
-    <div class="md:h-1/6">
+    <div class="h-1/6">
         <div class="flex justify-start" >
-            <p class="font-bold border-b border-r border-opacity-30 bg-emerald-400 bg-opacity-10 border-emerald-400 py-1 px-6 pr-8 rounded-br-full uppercase text-emerald-400">Contact</p>
+            <p class="font-bold border-b border-r border-opacity-30 bg-emerald-400 bg-opacity-10 border-emerald-400 py-1 px-6 pr-8 rounded-br-full uppercase text-emerald-400 font-test10">Contact</p>
         </div>
     </div>
     
-    <div class="md:h-5/6 flex items-center justify-center w-full">
-        <div class="mx-4 w-8/12">
+    <div class="h-5/6 flex items-center justify-center w-full font-test16">
+        <div class="mx-4 w-full lg:w-8/12">
             <h2 class="text-center text-2xl text-emerald-400 mb-4">Send me a message!</h2>
             <p class="text-center mb-12">If you have any questions, a problem to solve or even just want to say hi.</p>
             

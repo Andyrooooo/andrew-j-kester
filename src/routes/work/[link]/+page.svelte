@@ -163,7 +163,11 @@
 
 {#if isLoading}
     <div class="flex justify-center items-center h-screen shadow-lg shadow-emerald-400">
-        <img src="../../../portfolio_logo_lg.png" alt="Andrew's first and last inital" class="border p-2 rounded-md shadow-md border-emerald-400 animate-pulse w-20 h-20 shadow-2xl shadow-loadShad shadow-[0_0_75px_25px_rgba(52,211,153,0.25)]">
+        <img src="../../../portfolio_logo_lg.png" 
+        alt="Andrew's first and last inital" 
+        class="border p-2 rounded-md shadow-md border-emerald-400 animate-pulse w-20 h-20 shadow-2xl shadow-loadShad shadow-[0_0_75px_25px_rgba(52,211,153,0.25)]"
+        loading="lazy"
+        >
     </div>
 {:else}
     <!-- navigation -->
@@ -171,11 +175,15 @@
 
 
     <!---------------------------------------- header ------------------------------------>
-    <div class="h-screen">
+    <div class="h-screen font-test16">
         <!-- background logo -->
         <div class="absolute -z-10 h-full w-full flex justify-center items-center">
             <div class="">
-                <img src={currentPageData?.logoImage} alt="default for now" class="opacity-20 h-80 w-80">
+                <img src={currentPageData?.logoImage} 
+                alt="Background Logo for the case study" 
+                class="opacity-20 h-80 w-80"
+                loading="lazy"
+                >
             </div>
         </div>
 
@@ -196,7 +204,7 @@
         <div class=" h-full flex justify-center items-center">
             <div class="relative {onMountHeaderDetails} transition-all duration-1000">
                 <p class="mb-4 italic text-center"><a class="mr-1">{currentPageData?.month}</a><a>{currentPageData?.year}</a></p>
-                <h1 class="mb-4 text-4xl text-center">{currentPageData?.name}</h1>
+                <h1 class="mb-4 text-4xl text-center text-emerald-400">{currentPageData?.name}</h1>
                 <p class="mb-4 italic text-center">{currentPageData?.type}</p>
 
                 <div class="px-4 md:px-32 lg:px-64 xl:px-96 pt-12 text-xl">
@@ -221,11 +229,11 @@
 
     <!------------------------------------------ overview, goals, technologies --------------------------------->
     <div bind:this={project}></div>
-    <div class="mt-12 px-4" >
+    <div class="mt-12 px-4 font-test16" >
         <div class=" overflow-x-hidden">
 
             <!-- project overview -->
-            <div class="border-b border-white border-opacity-10 pb-8">
+            <div class="border-b border-white border-opacity-5 pb-8">
                 <div class="lg:flex lg:justify-between gap-4 relative {scrollPOver} transition-all duration-1000">
                     <h2 class="text-emerald-400 block basis-2/12 mb-2 lg:mb-0 text-lg">Project Overview</h2>
                     <div class="basis-10/12">
@@ -242,7 +250,7 @@
 
 
             <!-- project goals -->
-            <div class="border-b border-white border-opacity-10 py-8 ">
+            <div class="border-b border-white border-opacity-5 py-8 ">
                 <div class="lg:flex lg:justify-between gap-4 relative {scrollPGoals} transition-all duration-1000">
                     <h2 class="text-emerald-400 block basis-2/12 mb-2 lg:mb-0 text-lg">Project Goals</h2>
                     <div class="basis-10/12">{@html currentPageData?.projGoals}</div>
@@ -252,7 +260,7 @@
             
 
             <!-- project technologies -->
-            <div class="border-b border-white border-opacity-10 py-8" >
+            <div class="border-b border-white border-opacity-5 py-8" >
                 <div class="lg:flex lg:justify-between gap-4 relative {tech} transition-all duration-1000">
                     <h2 class="text-emerald-400 block basis-2/12 mb-2 lg:mb-0 text-lg">Technologies</h2>
                     <div class="basis-10/12">{@html currentPageData?.projTech}</div>
@@ -296,7 +304,12 @@
         {#if currentPageData?.mobileAndDesk}
             <!-- videos including mobile -->
             <div class="relative overflow-x-hidden">
-                <img src={currentPageData?.vidBack} alt="" class="w-full">
+                <img 
+                src={currentPageData?.vidBack} 
+                loading="lazy"
+                alt="background color for the video mockup" 
+                class="w-full"
+                >
 
                 <div class="absolute z-10 flex w-full top-1/2" bind:this={videoSection}></div>
                 
@@ -322,7 +335,7 @@
         {:else}
             <!-- just the desktop video -->
             <div class="relative overflow-x-hidden">
-                <img src={currentPageData?.vidBack} alt="" class="w-full">
+                <img src={currentPageData?.vidBack} alt="background for the video mockup" class="w-full" loading="lazy">
 
                 <div class="absolute z-10 flex w-full top-1/2" bind:this={videoSection}></div>
 
@@ -337,12 +350,12 @@
         {/if}
 
         <div class="relative w-full h-full flex justify-center items-center overflow-x-hidden" >
-            <img src={currentPageData?.carBack} alt="" class="w-full">
+            <img src={currentPageData?.carBack} alt="background color for the carousel of images" class="w-full" loading="lazy">
             
             <div class="absolute z-10 top-0 flex justify-center items-center h-full w-full {scrollAppearCarousel} transition-all duration-1000 ">
                 <div class="max-w-[1268px] snap-x scroll-px-0 snap-mandatory scroll-smooth flex gap-4 overflow-x-scroll mx-4 pb-2">
                     {#each currentPageData?.images ?? [] as image (image)}
-                        <img src={image.imageSrc} loading="lazy" class="snap-start shrink-0 card shadow-sm shadow-zinc-700 border border-zinc-300" >
+                        <img src={image.imageSrc} loading="lazy" class="snap-start shrink-0 card shadow-sm shadow-zinc-700 border border-zinc-300" alt="images of the app" >
                     {/each}
                 </div>
             </div>
@@ -354,7 +367,7 @@
 
 
     <!---------------------------- similar works suggestions -------------------------------->
-    <div class="px-4 flex justify-center items-center border-b border-white border-opacity-10 pb-24">
+    <div class="px-4 flex justify-center items-center border-b border-white border-opacity-5 pb-24 font-test16">
         <div>
             <h1 class="mb-8 text-4xl text-center">Similar Works</h1>
 
@@ -363,7 +376,7 @@
                     <button class="md:basis-5/12 p-4 border border-opacity-20 bg-zinc-900 bg-opacity-60 border-white rounded-md hover:hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-emerald-400">
                         <a href={work.link}>
                             <div class="flex justify-center">
-                                <img src={work.projLink} alt="javascript logo with words Time Tracker App" class="rounded-md">
+                                <img src={work.projLink} alt="case study graphic" class="rounded-md">
                             </div>
                             <p class="mt-2 mb-1 italic">{work.year}</p>
                             <p class="text-2xl font-bold text-emerald-400">{work.name}</p>

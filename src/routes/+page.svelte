@@ -125,7 +125,11 @@
 
 {#if isLoading}
     <div class="flex justify-center items-center h-screen shadow-lg shadow-emerald-400">
-        <img src="../../../portfolio_logo_lg.png" alt="Andrew's first and last inital" class="border p-2 rounded-md shadow-md border-emerald-400 animate-pulse w-20 h-20 shadow-2xl shadow-loadShad shadow-[0_0_75px_25px_rgba(52,211,153,0.25)]">
+        <img src="../../../portfolio_logo_lg.png" 
+		alt="Andrew's first and last inital" 
+		class="border p-2 rounded-md shadow-md border-emerald-400 animate-pulse w-20 h-20 shadow-2xl shadow-loadShad shadow-[0_0_75px_25px_rgba(52,211,153,0.25)]"
+		loading="lazy"
+		>
     </div>
 {:else}
 
@@ -133,7 +137,7 @@
 		{#if smNAV}
 			<div class="fixed right-4 top-1/2 z-30 h-full hidden lg:block">
 				<nav class="bg-zinc-900 rounded-full py-4 border border-white border-opacity-20 bg-opacity-60 backdrop-blur-sm shadow-md">
-					<ul class="px-4">
+					<ul class="px-4 font-test16">
 						<li class="text-center hover:text-emerald-600 pb-2" class:currentPage={activeSection === 'home'}>
 							<button class=" transition-all duration-500" on:click={scrollToHome}>H</button>
 						</li>
@@ -147,7 +151,7 @@
 							<button class=" transition-all duration-500" on:click={scrollToContact}>C</button>
 						</li>
 						<li class="text-center hover:text-emerald-600">
-							<a href="MyResume2024.pdf" target="_blank">R</a>
+							<a href="Andrew_Kester_Resume.pdf" target="_blank">R</a>
 						</li>
 					</ul>
 				</nav>
@@ -163,7 +167,7 @@
 		</div>
 
 		<div class="h-screen relative" bind:this={home}>
-				<!-- <video class="object-cover w-full h-full opacity-40" loop autoplay muted>
+				<!-- <video class="object-cover w-full h-full opacity-60" loop autoplay muted>
 					<source src="home_video2.mp4" type="video/mp4" class="">
 				</video> -->
 			<div class="absolute z-10 top-0 flex justify-center h-full w-full items-center">
@@ -171,15 +175,15 @@
 			</div>
 		</div>
 
-		<div class="bg-black border-y border-white border-opacity-10" bind:this={about}>
+		<div class="bg-black border-y border-white border-opacity-5" bind:this={about}>
 			<About />
 		</div>
 
-		<div class="bg-black border-b border-white border-opacity-10 pb-4" bind:this={work} id="workSection">
+		<div class="bg-black border-b border-white border-opacity-5" bind:this={work} id="workSection">
 			<Work />
 		</div>
 
-		<div class="bg-black border-b border-white border-opacity-10" bind:this={contact}>
+		<div class="bg-black border-b border-white border-opacity-5" bind:this={contact}>
 			<Contact />
 		</div>
 

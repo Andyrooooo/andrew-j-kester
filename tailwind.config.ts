@@ -4,7 +4,6 @@ import forms from '@tailwindcss/forms';
 import typography from '@tailwindcss/typography';
 import { skeleton } from '@skeletonlabs/tw-plugin';
 import { ak } from './src/ak'
-import test from 'node:test';
 
 export default {
 	darkMode: 'class',
@@ -34,14 +33,14 @@ export default {
 				// test7: ['pinecone-mvb-rough2-condense', 'sans-serif'], 
 				// test8: ['pinecone-mvb-rough1-wide', 'sans-serif'], 
 				// test9: ['pinecone-mvb-rough2-wide', 'sans-serif'], 
-				// test10: ['pinecone-mvb-wide', 'sans-serif'],
+				test10: ['pinecone-mvb-wide', 'sans-serif'],
 				// test11: ['sofia-pro-soft', 'sans-serif'],
 				// test12: ['chippewa-falls', 'sans-serif'],
 				// test13: ['scarlet-wood', 'sans-serif'],
 				// test14: ['scarlet-wood-script', 'sans-serif'],
 				// test15: ['komet', 'sans-serif'],
-				// test16: ['komet-sc', 'sans-serif'],
-				headers: ['greycliff-cf', 'sans-serif'],
+				test16: ['komet-sc', 'sans-serif'],
+				// headers: ['greycliff-cf', 'sans-serif'],
 				// You can add more font families if needed
 			},
 			boxShadow: {

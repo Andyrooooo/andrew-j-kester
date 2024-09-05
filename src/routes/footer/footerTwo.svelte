@@ -19,10 +19,17 @@
 </script>
 
 <div class="flex justify-center py-12">
-    <img src="../../portfolio_logo_lg.png" alt="Andrew's first and last inital" width="64" height="64" class="border p-2 rounded-md shadow-md border-emerald-400 animate-hover">
+    <img 
+    src="../../portfolio_logo_lg.png" 
+    alt="Andrew's first and last inital" 
+    width="64" 
+    height="64" 
+    class="border p-2 rounded-md shadow-md border-emerald-400 animate-hover"
+    loading="lazy"
+    >
 </div>
 
-<div class="relative gap-4 py-8 pt-9">
+<div class="relative gap-4 py-8 pt-9 font-test16">
 
     <div class="absolute flex top-0 bg-gradient-to-r from-emerald-950 via-emerald-400 to-emerald-950 opacity-20 z-0 w-full h-full"></div>
 
@@ -44,7 +51,7 @@
         </div>
 
         <div class="">
-            <a href="../../MyResume2024.pdf" target="_blank" class="text-sm hover:text-emerald-400 transition-all duration-500 ">Resume</a>
+            <a href="../../Andrew_Kester_Resume.pdf" target="_blank" class="text-sm hover:text-emerald-400 transition-all duration-500 ">Resume</a>
         </div>
         
         
@@ -58,4 +65,4 @@
     <a class="fa-solid fa-envelope text-lg  hover:text-emerald-400 transition-all duration-500 " href="mailto:10919987@my.uvu.edu"></a>
 </div>
 
-<p class="text-center text-sm pb-4">&#169; 2024 Andrew Kester</p>
+<p class="text-center text-sm pb-4 font-test16">&#169; 2024 Andrew Kester</p>

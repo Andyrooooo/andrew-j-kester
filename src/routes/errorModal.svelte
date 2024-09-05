@@ -1,19 +1,24 @@
 <script>
-    import { message, messageModal } from './messageModal.js'
+    import { message, errorModal } from './contact/messageModal.js'
+    import { createEventDispatcher } from 'svelte'
+
+    const dispatch = createEventDispatcher()
 
     function toggleModal() {
-        messageModal.set(false)
+        errorModal.set(false)
+
+        dispatch('close')
     }
 
 </script>
 
 <div class="backdrop-blur-md bg-black bg-opacity-60 flex mx-4 max-w-1/4 shadow-md shadow-zinc-950 rounded-lg font-test16">
     <div class="h-auto flex items-center bg-emerald-400 rounded-l-lg px-4 bg-opacity-50">
-        <i class="fa-solid fa-envelope text-xl text-white"></i>
+        <i class="fa-solid fa-wrench text-xl text-white"></i>
     </div>
 
     <div class="p-4 border border-white border-opacity-10 rounded-r-lg">
-        <h1 class="mb-2 text-emerald-400 text-xl">Message Sent!</h1>
+        <h1 class="mb-2 text-emerald-400 text-xl">Error Reported</h1>
     
         <p class="font-light">{$message}</p>
     

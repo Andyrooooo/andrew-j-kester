@@ -18,13 +18,13 @@
 </script>
 
 
-<div class="h-screen lg:w-full lg:flex">
+<div class="h-screen lg:w-full lg:flex overflow-x-hidden">
     <div class="h-1/2 lg:hidden">
-        <img src="aboutme_sideview2.jpg" alt="me at the national park" loading="lazy" class="object-cover w-full h-full" >
+        <img src="aboutme_sideview2.jpg" alt="Andrew at the rockies national park" loading="lazy" class="object-cover w-full h-full" >
     </div>
 
     <div class="hidden lg:block lg:basis-1/2">
-        <img src="aboutme_sideview2.jpg" alt="me at the national park" loading="lazy" class="object-cover w-full h-full" >
+        <img src="aboutme_sideview2.jpg" alt="me at the rockies national park" loading="lazy" class="object-cover w-full h-full" >
     </div>
         
 
@@ -33,14 +33,14 @@
         <div class="flex items-center h-full relative">
 
             <div class="flex justify-start absolute top-0">
-                <p class="font-bold border-r border-b border-opacity-30 bg-emerald-400 bg-opacity-10 border-emerald-400 py-1 px-6 pr-8 rounded-br-full uppercase text-emerald-400">about</p>
+                <p class="font-bold border-r border-b border-opacity-30 bg-emerald-400 bg-opacity-10 border-emerald-400 py-1 px-6 pr-8 rounded-br-full uppercase text-emerald-400 font-test10">about</p>
             </div>
 
-            <div class="mt-10">
+            <div class="mt-10 font-test16">
                 <div class="h-12 overflow-x-hidden sm:hidden">
                     {#key i}
                         <h1 class="text-xl mb-2 px-4 absolute z-10 text-emerald-400" transition:fly={{ x: 100, duration: 2000 }}>
-                            {messages[i] || ''}
+                            {@html messages[i] || ''}
                         </h1>
                     {/key}
                 </div>
@@ -48,7 +48,7 @@
                 <div class="h-12 overflow-x-hidden hidden sm:block md:hidden">
                     {#key i}
                         <h1 class="text-xl mb-2 px-4 absolute z-10 text-emerald-400" transition:fly={{ x: 200, duration: 2000 }}>
-                            {messages[i] || ''}
+                            {@html messages[i] || ''}
                         </h1>
                     {/key}
                 </div>
@@ -56,7 +56,7 @@
                 <div class="h-12 overflow-x-hidden hidden md:block">
                     {#key i}
                         <h1 class="text-xl mb-2 px-4 absolute z-10 text-emerald-400" transition:fly={{ x: 300, duration: 2000 }}>
-                            {messages[i] || ''}
+                            {@html messages[i] || ''}
                         </h1>
                     {/key}
                 </div>
