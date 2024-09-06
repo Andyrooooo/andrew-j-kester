@@ -74,7 +74,7 @@
     </div>
     
     
-    <div class="grid grid-cols-[auto_1fr_auto] gap-4 items-center mx-4 relative">
+    <div class="grid grid-cols-[auto_1fr_auto] items-center relative px-4">
     
         
          <!-- Button: Left  -->
@@ -84,9 +84,9 @@
     
     
          <!-- Carousel  -->
-        <div bind:this={elemWorks} class="snap-x snap-mandatory scroll-smooth flex gap-4 overflow-x-hidden">
+        <div bind:this={elemWorks} class="snap-x snap-mandatory scroll-smooth flex overflow-x-hidden gap-4">
             {#each works as { name, image, isHovered, link, year, type }, index (image)}
-                <div class="shrink-0 w-[65%] sm:w-[45%] md:w-[35%] lg:w-[25%] xl:w-[20%] 2xl:w-[15%] snap-start relative z-10 my-12"
+                <div class="shrink-0 w-[100%] 2xs:w-[80%] xs:w-[60%] sm:w-[50%] md:w-[35%] lg:w-[30%] xl:w-[25%] snap-start relative z-10 my-12"
                 role="banner" 
                 on:mouseenter={() => { 
                 works[index].isHovered = true
@@ -96,7 +96,7 @@
                 }}>
                         <img
                             src={image}
-                            class="rounded-container-token transition-all duration-200 border-2 border-zinc-300 shadow-md shadow-zinc-800 "
+                            class="rounded-container-token transition-all duration-200 border-2 border-zinc-300 shadow-md shadow-zinc-800 object-dover"
                             alt={name}
                             title={name}
                             loading="lazy"

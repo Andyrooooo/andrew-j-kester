@@ -70,6 +70,10 @@ export default {
 				'hover-sm-2': 'hover-sm-2 3s ease-in-out infinite',
 				'hover-sm-3': 'hover-sm-3 4s ease-in-out infinite',
             },
+			screens: {
+				'xs': '500px',
+				'2xs': '400px'
+			}
 			
 		},
 	},

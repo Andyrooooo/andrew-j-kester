@@ -76,16 +76,16 @@
     <div class="absolute left-8 bottom-8">
         <img src="../../../portfolio_logo_lg.png" 
         alt="Andrew's first and last inital" 
-        class="border p-1.5 rounded-lg shadow-md border-emerald-400 animate-pulse w-8 h-8 shadow-2xl shadow-loadShad shadow-[0_0_20px_6px_rgba(52,211,153,0.25)]"
+        class="border p-1.5 rounded-md shadow-md border-emerald-400 w-6 h-6 shadow-[0_0_20px_5px_rgba(52,211,153,0.25)]"
         loading="lazy"
         >
     </div>
 
-    <div class="absolute right-8 bottom-8 drop-shadow-[0_0_15px_rgba(52,211,153,0.9)]">
+    <div class="absolute right-8 bottom-8">
         <!-- <i class="shadow-md animate-pulse text-xl fa-solid fa-tree text-emerald-400 translate-x-[50px]"></i>-->
-        <i class="shadow-md animate-pulse text-sm fa-solid fa-compass text-emerald-400 translate-x-[20px] translate-y-[-15px]"></i>
-        <i class="shadow-md animate-pulse text-sm fa-solid fa-map text-emerald-400 translate-x-[20px] translate-y-[-15px]"></i> 
-        <i class="shadow-md animate-pulse text-sm fa-solid fa-tree text-emerald-400 translate-x-[-8px] "></i>
+        <i class="shadow-md text-xs fa-solid fa-compass text-emerald-400 translate-x-[20px] translate-y-[-15px]"></i>
+        <i class="shadow-md text-xs fa-solid fa-map text-emerald-400 translate-x-[20px] translate-y-[-15px]"></i> 
+        <i class="shadow-md text-xs fa-solid fa-tree text-emerald-400 translate-x-[-5px] "></i>
     </div>
 
     

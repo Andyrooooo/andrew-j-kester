@@ -165,7 +165,7 @@
     <div class="flex justify-center items-center h-screen shadow-lg shadow-emerald-400">
         <img src="../../../portfolio_logo_lg.png" 
         alt="Andrew's first and last inital" 
-        class="border p-2 rounded-md shadow-md border-emerald-400 animate-pulse w-20 h-20 shadow-2xl shadow-loadShad shadow-[0_0_75px_25px_rgba(52,211,153,0.25)]"
+        class="border p-2 rounded-md shadow-md border-emerald-400 animate-pulse w-20 h-20 shadow-loadShad shadow-[0_0_60px_10px_rgba(52,211,153,0.25)]"
         loading="lazy"
         >
     </div>
