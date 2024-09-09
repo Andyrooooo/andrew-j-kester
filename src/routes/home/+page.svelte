@@ -34,7 +34,7 @@
             <div class="flex justify-center my-4 relative">
                 <img 
                 src="profilePicture2.png" 
-                class="w-5/12 rounded-full animate-hover border border-opacity-20 border-white bg-emerald-400" 
+                class="w-5/12 rounded-full animate-hover bg-emerald-400" 
                 loading="lazy" 
                 alt="Andrew Kesters face">
             </div>

@@ -10,8 +10,12 @@
 
     export let data
     let currentPageData = data.link
+    let playTheVideo
+    let playBut = ''
     let overviewLimit = 142
+    let goalsLimit = 142
     let selectedWorks = []
+
 
     $: {
         if (currentPageData !== data.link) {
@@ -47,6 +51,8 @@
     let technologies
     let urls = 'right-[-120%]'
     let urlButtons
+    let scrollProjDesc = 'right-[-100%]'
+    let pDesc
     
 
     function moveChevronL() {
@@ -115,6 +121,8 @@
                             tech = 'left-0'
                         } else if (entry.target === urlButtons) {
                             urls = 'right-0'
+                        } else if (entry.target === pDesc) {
+                            scrollProjDesc = 'right-0'
                         }
                     }
 
@@ -143,6 +151,7 @@
             observer.observe(pGoals)
             observer.observe(technologies)
             observer.observe(urlButtons)
+            observer.observe(pDesc)
 
             observer.observe(videoSection)
             observer.observe(carouselSection)
@@ -157,6 +166,17 @@
 
     function changeLimit() {
         overviewLimit = overviewLimit === 142 ? currentPageData.projOver.length : 142;
+    }
+
+    function changeGoalsLimit() {
+        goalsLimit = goalsLimit === 142 ? currentPageData.projGoals.length : 142;
+    }
+
+    function playVideo() {
+        if (playTheVideo) {
+            playTheVideo.play()
+            playBut = 'hidden'
+        }
     }
 </script>
 
@@ -207,8 +227,8 @@
                 <h1 class="mb-4 text-4xl text-center text-emerald-400">{currentPageData?.name}</h1>
                 <p class="mb-4 italic text-center">{currentPageData?.type}</p>
 
-                <div class="px-4 md:px-32 lg:px-64 xl:px-96 pt-12 text-xl">
-                    <p class="">{@html currentPageData?.projDesc}</p>
+                <div class="text-xl xs:text-2xl mt-12 mx-4 text-center">
+                    <p class="">{@html currentPageData?.quickDesc}</p>
                 </div>
             </div>
         </div>
@@ -232,8 +252,16 @@
     <div class="mt-12 px-4 font-test16" >
         <div class=" overflow-x-hidden">
 
+            <!-- project description -->
+            <div class="border-b border-white border-opacity-5 text-xl pb-8 relative {scrollProjDesc} transition-all duration-1000">
+                <p class="">{@html currentPageData?.projDesc}</p>
+            </div>
+            <div bind:this={pDesc}></div>
+
+
+            
             <!-- project overview -->
-            <div class="border-b border-white border-opacity-5 pb-8">
+            <div class="border-b border-white border-opacity-5 py-8">
                 <div class="lg:flex lg:justify-between gap-4 relative {scrollPOver} transition-all duration-1000">
                     <h2 class="text-emerald-400 block basis-2/12 mb-2 lg:mb-0 text-lg">Project Overview</h2>
                     <div class="basis-10/12">
@@ -248,25 +276,29 @@
             </div>
             <div bind:this={pOver}></div>
 
-
+            
             <!-- project goals -->
             <div class="border-b border-white border-opacity-5 py-8 ">
+                <div bind:this={pGoals}></div>
                 <div class="lg:flex lg:justify-between gap-4 relative {scrollPGoals} transition-all duration-1000">
                     <h2 class="text-emerald-400 block basis-2/12 mb-2 lg:mb-0 text-lg">Project Goals</h2>
-                    <div class="basis-10/12">{@html currentPageData?.projGoals}</div>
+                    <div class="basis-10/12">
+                        {@html currentPageData?.projGoals.slice(0, goalsLimit) + (goalsLimit === 142 ? '...' : '')}
+                        <button on:click={changeGoalsLimit} class="text-emerald-600 hover:text-emerald-400 transition-all duration-300 translate-y-[-0.5rem]">{goalsLimit === 142 ? 'Read More' : 'Read Less'}</button>
+                    </div>
                 </div>
             </div>
-            <div  bind:this={pGoals}></div>
             
 
+            
             <!-- project technologies -->
+            <div bind:this={technologies}></div>
             <div class="border-b border-white border-opacity-5 py-8" >
                 <div class="lg:flex lg:justify-between gap-4 relative {tech} transition-all duration-1000">
                     <h2 class="text-emerald-400 block basis-2/12 mb-2 lg:mb-0 text-lg">Technologies</h2>
                     <div class="basis-10/12">{@html currentPageData?.projTech}</div>
                 </div>
             </div>
-            <div bind:this={technologies}></div>
 
 
             <!-- website link buttons -->
@@ -305,25 +337,25 @@
             <!-- videos including mobile -->
             <div class="relative overflow-x-hidden">
                 <img 
-                src={currentPageData?.vidBack} 
-                loading="lazy"
-                alt="background color for the video mockup" 
-                class="w-full"
-                >
+                src={currentPageData?.backOne} loading="lazy" alt="background color for the video mockup" class="w-full">
 
                 <div class="absolute z-10 flex w-full top-1/2" bind:this={videoSection}></div>
                 
-                <div class="absolute z-10 flex justify-center items-center h-full w-full top-0 {scrollAppearVideo}  transition-all duration-1000 ">
-                    <div class="px-4 max-w-[1200px] translate-y-[-50px] sm:translate-y-[-65px] md:translate-y-[-80px] lg:translate-y-[-95px] xl:translate-y-[-110px]">
-                        <video class="rounded-lg shadow-md shadow-zinc-700 border border-zinc-400 " loop bind:this={videoElement}>
+                <div class="absolute z-10 flex items-center justify-center h-full w-full top-0 {scrollAppearVideo} transition-all duration-1000 ">
+                    <div class="lg:px-4 max-w-[1200px] lg:translate-y-[-95px] xl:translate-y-[-110px]">
+                        <video class="lg:hidden shadow-md shadow-zinc-700 border border-zinc-400 " controls>
+                            <source src={currentPageData?.mockVid} type="video/mp4" class="">
+                        </video>
+
+                        <video class="hidden lg:block lg:rounded-lg shadow-md shadow-zinc-700 border border-zinc-400 " loop bind:this={videoElement}>
                             <source src={currentPageData?.mockVid} type="video/mp4" class="">
                         </video>
                     </div>
                 </div>
 
-                <div class="absolute z-20 flex items-center justify-center h-full w-full top-0 {scrollAppearMobileVideo} transition-all duration-1000">
+                <div class="hidden lg:flex absolute z-20 items-center justify-center h-full w-full top-0 {scrollAppearMobileVideo} transition-all duration-1000">
                     <div class="px-4 w-full max-w-[1200px] flex justify-end" >
-                        <div class="w-[90px] sm:w-[120px] md:w-[150px] lg:w-[180px] xl:w-[210px] translate-y-[50px] sm:translate-y-[65px] md:translate-y-[80px] lg:translate-y-[95px] xl:translate-y-[110px]">
+                        <div class=" lg:w-[180px] xl:w-[210px] lg:translate-y-[95px] xl:translate-y-[110px]">
                             <video class="rounded-lg shadow-md shadow-zinc-700 border-4 border-black float-right" loop bind:this={mobileVideoElement} >
                                 <source src={currentPageData?.mockMobileVid} type="video/mp4" class="">
                             </video>
@@ -335,13 +367,29 @@
         {:else}
             <!-- just the desktop video -->
             <div class="relative overflow-x-hidden">
-                <img src={currentPageData?.vidBack} alt="background for the video mockup" class="w-full" loading="lazy">
+                <img src={currentPageData?.backOne} alt="background for the video mockup" class="w-full lg:hidden" loading="lazy">
+                <img src={currentPageData?.backThree} alt="background for the video mockup" class="w-full hidden lg:block" loading="lazy">
 
                 <div class="absolute z-10 flex w-full top-1/2" bind:this={videoSection}></div>
 
                 <div class="absolute z-10 flex justify-center items-center h-full w-full top-0 {scrollAppearVideo}  transition-all duration-1000 " >
-                    <div class="basis-full px-4 max-w-[1300px] ">
-                        <video class="rounded-lg shadow-md shadow-zinc-700 border border-zinc-400 " loop bind:this={videoElement} >
+                    <div class="basis-full lg:px-4 max-w-[1300px] ">
+
+                        <!-- <div class="absolute z-20 top-0 w-full h-full flex items-center justify-center {playBut}">
+                            <button on:click={playVideo} class="fa-solid fa-circle-play text-emerald-400 text-3xl hover:text-emerald-300 transition-all duration-300"></button>
+                        </div> -->
+
+                        <!-- <div class="absolute z-20 top-0 w-full h-full flex items-center justify-center">
+                            <button on:click={playVideo} class="fa-solid fa-circle-play text-emerald-400 text-3xl hover:text-emerald-300 transition-all duration-300"></button>
+                        </div> -->
+
+                        <!-- Small Screen mockup video for desktop -->
+                        <video class="lg:hidden shadow-md shadow-zinc-700 border border-zinc-400 relative" controls>
+                            <source src={currentPageData?.mockVid} type="video/mp4" class="">
+                        </video>
+
+                        <!-- large screen mockup video for desktop -->
+                        <video class="hidden lg:block lg:rounded-lg shadow-md shadow-zinc-700 border border-zinc-400 " loop bind:this={videoElement} >
                             <source src={currentPageData?.mockVid} type="video/mp4" class="">
                         </video>
                     </div>
@@ -350,12 +398,21 @@
         {/if}
 
         <div class="relative w-full h-full flex justify-center items-center overflow-x-hidden" >
-            <img src={currentPageData?.carBack} alt="background color for the carousel of images" class="w-full" loading="lazy">
+            <img src={currentPageData?.backTwo} alt="background color for the carousel of images" class="w-full lg:hidden" loading="lazy">
+            <img src={currentPageData?.backFour} alt="background color for the carousel of images" class="w-full hidden lg:block" loading="lazy">
             
             <div class="absolute z-10 top-0 flex justify-center items-center h-full w-full {scrollAppearCarousel} transition-all duration-1000 ">
-                <div class="max-w-[1268px] snap-x scroll-px-0 snap-mandatory scroll-smooth flex gap-4 overflow-x-scroll mx-4 pb-2">
+                <!-- carousel on small screens -->
+                <div class="lg:hidden max-w-[1268px] snap-x scroll-px-0 snap-mandatory scroll-smooth flex gap-4 overflow-x-scroll pb-2">
                     {#each currentPageData?.images ?? [] as image (image)}
-                        <img src={image.imageSrc} loading="lazy" class="snap-start shrink-0 card shadow-sm shadow-zinc-700 border border-zinc-300" alt="images of the app" >
+                        <img src={image.imageSrc} loading="lazy" class="snap-start shrink-0 shadow-sm shadow-zinc-700 border border-zinc-400" alt="images of the app" >
+                    {/each}
+                </div>
+
+                <!-- carousel on large screens -->
+                <div class="hidden lg:flex max-w-[1268px] snap-x scroll-px-0 snap-mandatory scroll-smooth gap-4 overflow-x-scroll mx-4 pb-2">
+                    {#each currentPageData?.images ?? [] as image (image)}
+                        <img src={image.imageSrc} loading="lazy" class="snap-start shrink-0 card shadow-sm shadow-zinc-700 border border-zinc-400" alt="images of the app" >
                     {/each}
                 </div>
             </div>
@@ -417,6 +474,13 @@
     .line-clamp-2 {
         display: -webkit-box;
         -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;

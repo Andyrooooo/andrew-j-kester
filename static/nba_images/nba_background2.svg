@@ -1,20 +1,20 @@
-<svg width="1920" height="600" viewBox="0 0 1920 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_356_4543)">
-<rect width="1920" height="600" transform="translate(1920 600) rotate(180)" fill="white"/>
-<rect x="1920" y="600" width="1920" height="600" transform="rotate(-180 1920 600)" fill="url(#paint0_linear_356_4543)"/>
-<rect x="1920" width="600" height="1920" transform="rotate(90 1920 0)" fill="url(#paint1_linear_356_4543)" fill-opacity="0.6"/>
+<svg width="1920" height="1600" viewBox="0 0 1920 1600" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_494_1962)">
+<rect width="1920" height="1600" transform="translate(1920 1600) rotate(180)" fill="white"/>
+<rect x="1920" y="1600" width="1920" height="1600" transform="rotate(-180 1920 1600)" fill="url(#paint0_linear_494_1962)"/>
+<rect x="1920" width="1600" height="1920" transform="rotate(90 1920 0)" fill="url(#paint1_linear_494_1962)" fill-opacity="0.6"/>
 </g>
 <defs>
-<linearGradient id="paint0_linear_356_4543" x1="3840" y1="900" x2="2608.83" y2="1820.9" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear_494_1962" x1="3840" y1="2400" x2="2060.04" y2="2899.27" gradientUnits="userSpaceOnUse">
 <stop offset="0.293" stop-color="#00BA9E"/>
 <stop offset="1" stop-color="white"/>
 </linearGradient>
-<linearGradient id="paint1_linear_356_4543" x1="2520" y1="960" x2="1923.18" y2="1003.59" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint1_linear_494_1962" x1="3520" y1="960" x2="1978.49" y2="1260.27" gradientUnits="userSpaceOnUse">
 <stop offset="0.293" stop-color="#00BA9E"/>
 <stop offset="1" stop-color="white"/>
 </linearGradient>
-<clipPath id="clip0_356_4543">
-<rect width="1920" height="600" fill="white" transform="translate(1920 600) rotate(180)"/>
+<clipPath id="clip0_494_1962">
+<rect width="1920" height="1600" fill="white" transform="translate(1920 1600) rotate(180)"/>
 </clipPath>
 </defs>
 </svg>

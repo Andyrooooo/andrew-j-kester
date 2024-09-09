@@ -78,7 +78,7 @@
     
         
          <!-- Button: Left  -->
-        <button type="button" class="absolute z-20 left-4 border border-opacity-20 bg-zinc-900 bg-opacity-60 backdrop-blur-sm border-white text-white px-4 h-12 rounded-full hover:bg-emerald-400 transition-all duration-500" on:click={multiColumnLeft}>
+        <button type="button" class="absolute z-20 left-8 border border-opacity-20 bg-zinc-900 bg-opacity-60 backdrop-blur-sm border-white text-white px-4 h-12 rounded-full hover:bg-emerald-400 transition-all duration-500 mt-20" on:click={multiColumnLeft}>
             <i class="fa-solid fa-arrow-left" />
         </button>
     
@@ -116,7 +116,7 @@
     
     
          <!-- Button-Right -->
-        <button type="button" class="absolute z-10 right-4 border border-opacity-20 bg-zinc-900 bg-opacity-60 border-white text-white px-4 h-12 rounded-full hover:bg-emerald-500 transition-all duration-500 backdrop-blur-sm" on:click={multiColumnRight}>
+        <button type="button" class="absolute z-10 right-8 border border-opacity-20 bg-zinc-900 bg-opacity-60 border-white text-white px-4 h-12 rounded-full hover:bg-emerald-500 transition-all duration-500 backdrop-blur-sm mt-20" on:click={multiColumnRight}>
             <i class="fa-solid fa-arrow-right" />
         </button>
     </div>
