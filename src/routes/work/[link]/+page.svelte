@@ -15,7 +15,6 @@
     let overviewLimit = 142
     let goalsLimit = 142
     let selectedWorks = []
-    let startingTime
 
 
     $: {
@@ -159,10 +158,6 @@
 
             getRandomWorks()
 
-            if (startingTime) {
-                startingTime.currentTime = 1
-            }
-
             return () => {
                 observer.disconnect()
             }
@@ -177,12 +172,12 @@
         goalsLimit = goalsLimit === 142 ? currentPageData.projGoals.length : 142;
     }
 
-    // function playVideo() {
-    //     if (playTheVideo) {
-    //         playTheVideo.play()
-    //         playBut = 'hidden'
-    //     }
-    // }
+    function playVideo() {
+        if (playTheVideo) {
+            playTheVideo.play()
+            playBut = 'hidden'
+        }
+    }
 </script>
 
 
@@ -347,8 +342,8 @@
                 <div class="absolute z-10 flex w-full top-1/2" bind:this={videoSection}></div>
                 
                 <div class="absolute z-10 flex items-center justify-center h-full w-full top-0 {scrollAppearVideo} transition-all duration-1000 ">
-                    <div class="lg:px-4 max-w-[1200px] lg:translate-y-[-95px] xl:translate-y-[-110px] backdrop-blur-sm bg-zinc-900 bg-opacity-60 lg:backdrop-blur-none lg:bg-inherit lg:bg-opacity-100">
-                        <video class="lg:hidden shadow-md shadow-zinc-700 border border-zinc-400" controls bind:this={startingTime}>
+                    <div class="lg:px-4 max-w-[1200px] lg:translate-y-[-95px] xl:translate-y-[-110px] backdrop-blur-sm bg-zinc-900 lg:bg-inherit">
+                        <video class="lg:hidden shadow-md shadow-zinc-700 border border-zinc-400" controls >
                             <source src={currentPageData?.mockVid} type="video/mp4" class="">
                         </video>
 
