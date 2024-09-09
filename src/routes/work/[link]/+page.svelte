@@ -343,7 +343,8 @@
                 
                 <div class="absolute z-10 flex items-center justify-center h-full w-full top-0 {scrollAppearVideo} transition-all duration-1000 ">
                     <div class="lg:px-4 max-w-[1200px] lg:translate-y-[-95px] xl:translate-y-[-110px]">
-                        <video class="lg:hidden shadow-md shadow-zinc-700 border border-zinc-400 " controls>
+                        <img src={currentPageData?.images[0].imageSrc} alt="" class="lg:hidden">
+                        <video class="lg:hidden shadow-md shadow-zinc-700 border border-zinc-400" controls>
                             <source src={currentPageData?.mockVid} type="video/mp4" class="">
                         </video>
 
