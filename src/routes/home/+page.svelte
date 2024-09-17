@@ -76,7 +76,7 @@
     <div class="absolute left-8 bottom-8">
         <img src="../../../portfolio_logo_lg.png" 
         alt="Andrew's first and last inital" 
-        class="border p-1.5 rounded-md shadow-md border-emerald-400 w-6 h-6 shadow-[0_0_20px_5px_rgba(52,211,153,0.25)]"
+        class="border p-1.5 rounded-md shadow-md border-emerald-400 w-7 h-7 shadow-[0_0_20px_5px_rgba(52,211,153,0.25)]"
         loading="lazy"
         >
     </div>
