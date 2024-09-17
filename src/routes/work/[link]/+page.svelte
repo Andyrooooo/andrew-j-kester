@@ -265,12 +265,16 @@
                 <div class="lg:flex lg:justify-between gap-4 relative {scrollPOver} transition-all duration-1000">
                     <h2 class="text-emerald-400 block basis-2/12 mb-2 lg:mb-0 text-lg">Project Overview</h2>
                     <div class="basis-10/12">
-                        <p class="">
+                        {#if currentPageData?.projOver.length < 142 }
+                            {@html currentPageData?.projOver}
+
+                        {:else if currentPageData?.projOver.length >= 142 }
                             {@html currentPageData?.projOver.slice(0, overviewLimit) + (overviewLimit === 142 ? '...' : '')}
+                            
                             <button class="text-emerald-600 hover:text-emerald-400 transition-all duration-300" on:click={changeLimit}>
                                 {overviewLimit === 142 ? 'Read More' : 'Read Less'}
                             </button>
-                        </p>
+                        {/if}
                     </div>
                 </div>
             </div>
@@ -397,23 +401,32 @@
             </div>
         {/if}
 
-        <div class="relative w-full h-full flex justify-center items-center overflow-x-hidden" >
+        <div class="relative w-full h-full flex justify-center items-center overflow-x-hidden font-test16">
             <img src={currentPageData?.backTwo} alt="background color for the carousel of images" class="w-full lg:hidden" loading="lazy">
             <img src={currentPageData?.backFour} alt="background color for the carousel of images" class="w-full hidden lg:block" loading="lazy">
             
-            <div class="absolute z-10 top-0 flex justify-center items-center h-full w-full {scrollAppearCarousel} transition-all duration-1000 ">
+            <div class="absolute z-10 top-0 flex justify-center items-center h-full w-full {scrollAppearCarousel} transition-all duration-1000">
+
                 <!-- carousel on small screens -->
-                <div class="lg:hidden max-w-[1268px] snap-x scroll-px-0 snap-mandatory scroll-smooth flex gap-4 overflow-x-scroll pb-2">
-                    {#each currentPageData?.images ?? [] as image (image)}
-                        <img src={image.imageSrc} loading="lazy" class="snap-start shrink-0 shadow-sm shadow-zinc-700 border border-zinc-400" alt="images of the app" >
-                    {/each}
+                <div class="lg:hidden">
+                    <!-- <p class="text-center text-emerald-200 text-lg mb-4 animate-bounce">View Mockups <i class="fa-solid fa-left-right pt-3"></i></p> -->
+
+                    <div class="max-w-[1268px] snap-x scroll-px-0 snap-mandatory scroll-smooth flex gap-4 overflow-x-scroll pb-2">
+                        {#each currentPageData?.images ?? [] as image (image)}
+                            <img src={image.imageSrc} loading="lazy" class="snap-start shrink-0 shadow-sm shadow-zinc-700 border border-zinc-400" alt="images of the app" >
+                        {/each}
+                    </div>
                 </div>
 
                 <!-- carousel on large screens -->
-                <div class="hidden lg:flex max-w-[1268px] snap-x scroll-px-0 snap-mandatory scroll-smooth gap-4 overflow-x-scroll mx-4 pb-2">
-                    {#each currentPageData?.images ?? [] as image (image)}
-                        <img src={image.imageSrc} loading="lazy" class="snap-start shrink-0 card shadow-sm shadow-zinc-700 border border-zinc-400" alt="images of the app" >
-                    {/each}
+                <div class="hidden lg:block">
+                    <p class="text-center text-emerald-200 text-lg mb-4 animate-bounce">View Mockups <i class="fa-solid fa-left-right pt-3"></i></p>
+
+                    <div class="flex max-w-[1268px] snap-x scroll-px-0 snap-mandatory scroll-smooth gap-4 overflow-x-scroll mx-4 pb-2">
+                        {#each currentPageData?.images ?? [] as image (image)}
+                            <img src={image.imageSrc} loading="lazy" class="snap-start shrink-0 card shadow-sm shadow-zinc-700 border border-zinc-400" alt="images of the app" >
+                        {/each}
+                    </div>
                 </div>
             </div>
 
