@@ -28,13 +28,21 @@
 </script>
 
 
-<div class="flex justify-center h-full items-center w-full overflow-x-hidden relative">
+<div class="relative flex justify-center h-full items-center w-full overflow-x-hidden ">
+
+    <!-- Background Video Container -->
+    <div class="background-container">
+        <video class="background-video" autoplay muted loop playsinline>
+            <source src="home_video2.mp4" type="video/mp4">
+        </video>
+    </div>
+
     <div class="">
         <div class="{onMountMe} transition-all duration-1000">
-            <div class="flex justify-center my-4 relative">
+            <div class="flex justify-center relative">
                 <img 
                 src="profilePicture2.png" 
-                class="w-5/12 rounded-full animate-hover bg-emerald-400" 
+                class="w-5/12 rounded-full animate-hover border border-opacity-20 bg-emerald-400 bg-opacity-60 backdrop-blur-sm border-white" 
                 loading="lazy" 
                 alt="Andrew Kesters face">
             </div>
@@ -76,19 +84,43 @@
     <div class="absolute left-8 bottom-8">
         <img src="../../../portfolio_logo_lg.png" 
         alt="Andrew's first and last inital" 
-        class="border p-1.5 rounded-md shadow-md border-emerald-400 w-7 h-7 shadow-[0_0_20px_5px_rgba(52,211,153,0.25)]"
+        class="border p-1.5 rounded-md shadow-md border-emerald-400 w-7 h-7 shadow-[0_0_20px_5px_rgba(52,211,153,0.25)] bg-zinc-900 bg-opacity-60 backdrop-blur-sm"
         loading="lazy"
         >
     </div>
 
-    <div class="absolute right-8 bottom-8">
-        <!-- <i class="shadow-md animate-pulse text-xl fa-solid fa-tree text-emerald-400 translate-x-[50px]"></i>-->
+    <!-- <div class="absolute right-8 bottom-8">
         <i class="shadow-md text-xs fa-solid fa-compass text-emerald-400 translate-x-[20px] translate-y-[-15px]"></i>
         <i class="shadow-md text-xs fa-solid fa-map text-emerald-400 translate-x-[20px] translate-y-[-15px]"></i> 
         <i class="shadow-md text-xs fa-solid fa-tree text-emerald-400 translate-x-[-5px] "></i>
-    </div>
+    </div> -->
 
     
 </div>
 
 <!-- Hello, I'm a Developer at Utah Valley University. I have Great determination to get any job done and ensure I learn from every experience to come out better than before. I have a strong understanding of CSS, HTML, and JavaScript with an great understanding of various Web tools, libraries, and frameworks. So, check out my page, stay a while, and see what I have accomplished! -->
+
+
+<style>
+    .background-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1; /* Ensure it is behind everything */
+        pointer-events: none; /* Prevent interaction with the video */
+        opacity: 0.6;
+    }
+
+    .background-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1; /* Ensure it is behind everything */
+    }
+</style>
