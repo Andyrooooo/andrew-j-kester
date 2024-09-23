@@ -338,7 +338,7 @@
     <div class="my-24" >
 
         {#if currentPageData?.mobileAndDesk}
-            <!-- videos including mobile -->
+            <!--------------------------- videos including mobile ---------------------------->
             <div class="relative overflow-x-hidden">
                 <img 
                 src={currentPageData?.backOne} loading="lazy" alt="background color for the video mockup" class="w-full">
@@ -347,29 +347,29 @@
                 
                 <div class="absolute z-10 flex items-center justify-center h-full w-full top-0 {scrollAppearVideo} transition-all duration-1000 ">
                     <div class="lg:px-4 max-w-[1200px] lg:translate-y-[-95px] xl:translate-y-[-110px] backdrop-blur-sm bg-zinc-900 lg:bg-inherit">
-                        <video class="lg:hidden shadow-md shadow-zinc-700 border border-zinc-400" controls >
+
+                        <video class="lg:rounded-lg shadow-md shadow-zinc-700 border border-zinc-400 " loop playsinline bind:this={videoElement}>
                             <source src={currentPageData?.mockVid} type="video/mp4" class="">
                         </video>
 
-                        <video class="hidden lg:block lg:rounded-lg shadow-md shadow-zinc-700 border border-zinc-400 " loop bind:this={videoElement}>
-                            <source src={currentPageData?.mockVid} type="video/mp4" class="">
-                        </video>
                     </div>
                 </div>
 
                 <div class="hidden lg:flex absolute z-20 items-center justify-center h-full w-full top-0 {scrollAppearMobileVideo} transition-all duration-1000">
                     <div class="px-4 w-full max-w-[1200px] flex justify-end" >
                         <div class=" lg:w-[180px] xl:w-[210px] lg:translate-y-[95px] xl:translate-y-[110px]">
-                            <video class="rounded-lg shadow-md shadow-zinc-700 border-4 border-black float-right" loop bind:this={mobileVideoElement} >
+
+                            <video class="rounded-lg shadow-md shadow-zinc-700 border-4 border-black float-right" loop playsinline bind:this={mobileVideoElement} >
                                 <source src={currentPageData?.mockMobileVid} type="video/mp4" class="">
                             </video>
+
                         </div>
                     </div>
                 </div>
             </div>
 
         {:else}
-            <!-- just the desktop video -->
+            <!-------------------------- just the desktop video ----------------------------->
             <div class="relative overflow-x-hidden">
                 <img src={currentPageData?.backOne} alt="background for the video mockup" class="w-full lg:hidden" loading="lazy">
                 <img src={currentPageData?.backThree} alt="background for the video mockup" class="w-full hidden lg:block" loading="lazy">
@@ -379,23 +379,11 @@
                 <div class="absolute z-10 flex justify-center items-center h-full w-full top-0 {scrollAppearVideo}  transition-all duration-1000 " >
                     <div class="basis-full lg:px-4 max-w-[1300px] ">
 
-                        <!-- <div class="absolute z-20 top-0 w-full h-full flex items-center justify-center {playBut}">
-                            <button on:click={playVideo} class="fa-solid fa-circle-play text-emerald-400 text-3xl hover:text-emerald-300 transition-all duration-300"></button>
-                        </div> -->
-
-                        <!-- <div class="absolute z-20 top-0 w-full h-full flex items-center justify-center">
-                            <button on:click={playVideo} class="fa-solid fa-circle-play text-emerald-400 text-3xl hover:text-emerald-300 transition-all duration-300"></button>
-                        </div> -->
-
-                        <!-- Small Screen mockup video for desktop -->
-                        <video class="lg:hidden shadow-md shadow-zinc-700 border border-zinc-400 relative" controls>
+                        <!--------------------- large screen mockup video for desktop ------------------------->
+                        <video class="lg:rounded-lg shadow-md shadow-zinc-700 border border-zinc-400 " loop playsinline bind:this={videoElement} >
                             <source src={currentPageData?.mockVid} type="video/mp4" class="">
                         </video>
 
-                        <!-- large screen mockup video for desktop -->
-                        <video class="hidden lg:block lg:rounded-lg shadow-md shadow-zinc-700 border border-zinc-400 " loop bind:this={videoElement} >
-                            <source src={currentPageData?.mockVid} type="video/mp4" class="">
-                        </video>
                     </div>
                 </div>
             </div>
