@@ -22,6 +22,16 @@ export default {
 				'uvuGray': '#FFF',
 				'important': '#34D399',
 				'importantSecond': '#A7F3D0',
+				'uvusaColor': '#DDDDDD',
+				'uvusaColorSecond': '#2B5B3C',
+				'fssaColor': '#C1DEE2',
+				'fssaColorSecond': '#10686A',
+				'staColor': '#C7C7F1',
+				'staColorSecond': '#7171E3',
+				'ttaColor': '#34D399',
+				'nbaColor': '#00BA9E',
+				'vtaColor': '#003A67',
+				
 			},
 			fontFamily: {
 				// test: ['psfournier-std', 'sans-serif'], // Add your custom font family here

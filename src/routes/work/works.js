@@ -11,7 +11,7 @@ export const works = [
         logoImage: "../../uvusa_images/uvu_logo.png",
         year: '2024',
         month: 'April',
-        type: 'Web App',
+        type: 'Web App, Desktop App',
         quickDesc: 'Pre-Scheduling tool for university instructors',
         projDesc: "The UVU Scheduling App is a pre-scheduling tool designed to help Utah Valley University instructors plan, schedule, adjust, and manage upcoming courses, streamlining the scheduling process.",
         projOver: '<p class="mb-2">The UVU Scheduling App is a redevelopment of the existing scheduling system used by Utah Valley University instructors. The legacy software was outdated and led instructors to rely on alternative solutions such as Microsoft Excel and Google Sheets, which were distributed as spreadsheets. This process was inefficient and prone to issues, causing significant administrative headaches and scheduling conflicts.</p><p class="mb-2">After consulting with the scheduling coordinator and the design team, we developed a new solution tailored to address the instructors\' needs and streamline the scheduling process. The updated app incorporates features and improvements that not only meet but exceed the instructors\' expectations, ensuring a more effective and user-friendly scheduling experience.</p>',
@@ -25,7 +25,8 @@ export const works = [
         backThree: "../../uvusa_images/uvu_background3.svg",
         backFour: "../../uvusa_images/uvu_background4.svg",
         mobileAndDesk: false,
-        projLink: "../../uvusa_link.svg"
+        projLink: "../../uvusa_link.svg",
+        color: 'from-uvusaColorSecond to-uvusaColor'
     },
 
 
@@ -63,7 +64,8 @@ export const works = [
         mockVid: "../../fssa_images/fssa_video_desk2.mp4",
         mockMobileVid: "../../fssa_images/fssa_video_mobile2.mp4",
         mobileAndDesk: true,
-        projLink: "../../fssa_link.svg"
+        projLink: "../../fssa_link.svg",
+        color: 'from-fssaColorSecond to-fssaColor'
     },
 
 
@@ -98,7 +100,8 @@ export const works = [
         mockVid: "../../sta_images/sta_video_desk.mp4",
         mockMobileVid: "../../sta_images/sta_video_mobile.mp4",
         mobileAndDesk: true,
-        projLink: "../../sta_link2.svg"
+        projLink: "../../sta_link2.svg",
+        color: 'from-staColor to-white'
     },
 
 
@@ -133,7 +136,8 @@ export const works = [
         mockVid: "../../tta_images/tta_video_desk.mp4",
         mockMobileVid: "../../tta_images/tta_video_mobile.mp4",
         mobileAndDesk: true,
-        projLink: "../../tta_link.svg"
+        projLink: "../../tta_link.svg",
+        color: 'from-ttaColor to-white'
     },
 
 
@@ -165,7 +169,8 @@ export const works = [
         mockVid: "../../nba_images/nba_video_desk.mp4",
         mockMobileVid: "../../nba_images/nba_video_mobile.mp4",
         mobileAndDesk: true,
-        projLink: "../../nba_link.svg"
+        projLink: "../../nba_link.svg",
+        color: 'from-nbaColor to-white'
     },
 
 
@@ -195,6 +200,7 @@ export const works = [
         mockVid: "../../vta_images/vta_video_desk.mp4",
         mockMobileVid: "../../vta_images/vta_video_mobile.mp4",
         mobileAndDesk: true,
-        projLink: "../../vta_link.svg"
+        projLink: "../../vta_link.svg",
+        color: 'from-vtaColor to-white'
     },
 ]

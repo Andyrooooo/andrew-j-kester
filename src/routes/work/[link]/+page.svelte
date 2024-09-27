@@ -10,8 +10,8 @@
 
     export let data
     let currentPageData = data.link
-    let playTheVideo
-    let playBut = ''
+    // let playTheVideo
+    // let playBut = ''
     let overviewLimit = 142
     let goalsLimit = 142
     let selectedWorks = []
@@ -75,11 +75,11 @@
     project.scrollIntoView({behavior: 'smooth'})
   }
 
-  let isExpanded = false;
+//   let isExpanded = false;
 
-  function toggleExpansion() {
-    isExpanded = !isExpanded;
-  }
+//   function toggleExpansion() {
+//     isExpanded = !isExpanded;
+//   }
 
   function goBack() {
     workSection.set(true)
@@ -172,11 +172,16 @@
         goalsLimit = goalsLimit === 142 ? currentPageData.projGoals.length : 142;
     }
 
-    function playVideo() {
-        if (playTheVideo) {
-            playTheVideo.play()
-            playBut = 'hidden'
-        }
+    // function playVideo() {
+    //     if (playTheVideo) {
+    //         playTheVideo.play()
+    //         playBut = 'hidden'
+    //     }
+    // }
+
+    function goToDifferentCaseStudy(workLink: string) {
+        isLoading = true
+        goto(`/work/${workLink}`)
     }
 </script>
 
@@ -339,14 +344,13 @@
 
         {#if currentPageData?.mobileAndDesk}
             <!--------------------------- videos including mobile ---------------------------->
-            <div class="relative overflow-x-hidden">
-                <img 
-                src={currentPageData?.backOne} loading="lazy" alt="background color for the video mockup" class="w-full">
+            <div class="relative overflow-x-hidden bg-gradient-to-r {currentPageData?.color} py-12 lg:py-24">
+                <!-- <img src={currentPageData?.backOne} loading="lazy" alt="background color for the video mockup" class="w-full"> -->
 
                 <div class="absolute z-10 flex w-full top-1/2" bind:this={videoSection}></div>
                 
-                <div class="absolute z-10 flex items-center justify-center h-full w-full top-0 {scrollAppearVideo} transition-all duration-1000 ">
-                    <div class="lg:px-4 max-w-[1200px] lg:translate-y-[-95px] xl:translate-y-[-110px] backdrop-blur-sm bg-zinc-900 lg:bg-inherit">
+                <div class="relative flex items-center justify-center h-full w-full top-0 {scrollAppearVideo} transition-all duration-1000 ">
+                    <div class="lg:px-4 max-w-[1300px] lg:translate-y-[-40px] backdrop-blur-sm bg-zinc-900 lg:bg-inherit">
 
                         <video class="lg:rounded-lg shadow-md shadow-zinc-700 border border-zinc-400 " loop playsinline bind:this={videoElement}>
                             <source src={currentPageData?.mockVid} type="video/mp4" class="">
@@ -356,8 +360,8 @@
                 </div>
 
                 <div class="hidden lg:flex absolute z-20 items-center justify-center h-full w-full top-0 {scrollAppearMobileVideo} transition-all duration-1000">
-                    <div class="px-4 w-full max-w-[1200px] flex justify-end" >
-                        <div class=" lg:w-[180px] xl:w-[210px] lg:translate-y-[95px] xl:translate-y-[110px]">
+                    <div class="px-4 w-full max-w-[1300px] flex justify-end" >
+                        <div class=" lg:w-[180px] lg:translate-y-[125px]">
 
                             <video class="rounded-lg shadow-md shadow-zinc-700 border-4 border-black float-right" loop playsinline bind:this={mobileVideoElement} >
                                 <source src={currentPageData?.mockMobileVid} type="video/mp4" class="">
@@ -370,14 +374,14 @@
 
         {:else}
             <!-------------------------- just the desktop video ----------------------------->
-            <div class="relative overflow-x-hidden">
-                <img src={currentPageData?.backOne} alt="background for the video mockup" class="w-full lg:hidden" loading="lazy">
-                <img src={currentPageData?.backThree} alt="background for the video mockup" class="w-full hidden lg:block" loading="lazy">
+            <div class="relative overflow-x-hidden bg-gradient-to-r {currentPageData?.color} py-12">
+                <!-- <img src={currentPageData?.backOne} alt="background for the video mockup" class="w-full lg:hidden" loading="lazy">
+                <img src={currentPageData?.backThree} alt="background for the video mockup" class="w-full hidden lg:block" loading="lazy"> -->
 
                 <div class="absolute z-10 flex w-full top-1/2" bind:this={videoSection}></div>
 
-                <div class="absolute z-10 flex justify-center items-center h-full w-full top-0 {scrollAppearVideo}  transition-all duration-1000 " >
-                    <div class="basis-full lg:px-4 max-w-[1300px] ">
+                <div class="relative flex justify-center items-center h-full w-full top-0 {scrollAppearVideo}  transition-all duration-1000 " >
+                    <div class="basis-full lg:px-4 max-w-[1300px]">
 
                         <!--------------------- large screen mockup video for desktop ------------------------->
                         <video class="lg:rounded-lg shadow-md shadow-zinc-700 border border-zinc-400 " loop playsinline bind:this={videoElement} >
@@ -389,11 +393,11 @@
             </div>
         {/if}
 
-        <div class="relative w-full h-full flex justify-center items-center overflow-x-hidden font-test16">
-            <img src={currentPageData?.backTwo} alt="background color for the carousel of images" class="w-full lg:hidden" loading="lazy">
-            <img src={currentPageData?.backFour} alt="background color for the carousel of images" class="w-full hidden lg:block" loading="lazy">
+        <div class="relative w-full h-full flex justify-center items-center overflow-x-hidden font-test16 py-12 bg-gradient-to-r {currentPageData?.color}">
+            <!-- <img src={currentPageData?.backTwo} alt="background color for the carousel of images" class="w-full lg:hidden" loading="lazy">
+            <img src={currentPageData?.backFour} alt="background color for the carousel of images" class="w-full hidden lg:block" loading="lazy"> -->
             
-            <div class="absolute z-10 top-0 flex justify-center items-center h-full w-full {scrollAppearCarousel} transition-all duration-1000">
+            <div class="relative top-0 flex justify-center items-center h-full w-full {scrollAppearCarousel} transition-all duration-1000">
 
                 <!-- carousel on small screens -->
                 <div class="lg:hidden">
@@ -408,7 +412,9 @@
 
                 <!-- carousel on large screens -->
                 <div class="hidden lg:block">
-                    <p class="text-center text-emerald-200 text-lg mb-4 animate-bounce">View Mockups <i class="fa-solid fa-left-right pt-3"></i></p>
+                   <div class="flex justify-center">
+                    <p class="text-center py-2 px-6 border border-white border-opacity-20 bg-opacity-60 rounded-full text-white bg-zinc-900 text-lg mb-4 animate-bounce flex items-center gap-2">View Mockups <i class="fa-solid fa-left-right"></i></p>
+                   </div>
 
                     <div class="flex max-w-[1268px] snap-x scroll-px-0 snap-mandatory scroll-smooth gap-4 overflow-x-scroll mx-4 pb-2">
                         {#each currentPageData?.images ?? [] as image (image)}
@@ -431,16 +437,14 @@
 
             <div class="flex flex-wrap text-center justify-center gap-4">
                 {#each selectedWorks as work}
-                    <button class="md:basis-5/12 p-4 border border-opacity-20 bg-zinc-900 bg-opacity-60 border-white rounded-md hover:hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-emerald-400">
-                        <a href={work.link}>
-                            <div class="flex justify-center">
-                                <img src={work.projLink} alt="case study graphic" class="rounded-md">
-                            </div>
-                            <p class="mt-2 mb-1 italic">{work.year}</p>
-                            <p class="text-2xl font-bold text-emerald-400">{work.name}</p>
-                            <p class="mt-1 mb-2 italic">{work.type}</p>
-                            <p class="line-clamp-2">{@html work.projDesc}</p>
-                        </a>
+                    <button on:click={() => goToDifferentCaseStudy(work.link)} class="md:basis-5/12 p-4 border border-opacity-20 bg-zinc-900 bg-opacity-60 border-white rounded-md hover:hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-emerald-400">
+                        <div class="flex justify-center">
+                            <img src={work.projLink} alt="case study graphic" class="rounded-md">
+                        </div>
+                        <p class="mt-2 mb-1 italic">{work.year}</p>
+                        <p class="text-2xl font-bold text-emerald-400">{work.name}</p>
+                        <p class="mt-1 mb-2 italic">{work.type}</p>
+                        <p class="line-clamp-2">{@html work.projDesc}</p>
                     </button>
                 {/each}
             </div>
