@@ -377,7 +377,7 @@
             {#each imagesWithPositions ?? [] as image, index}
                 <div class="w-full flex {image.position} px-4 py-12 flex-wrap relative" >
                     <!-- <div class="mb-4 lg:mb-0 w-full justify-center lg:absolute lg:z-10 lg:top-0 lg:left-0 lg:h-full flex lg:items-center lg:w-1/3 xl:w-1/2"> -->
-                    <div class="mb-4 lg:mb-0 w-full justify-center lg:absolute lg:z-10 lg:top-0 lg:{image.wordPosition} lg:h-full flex lg:items-center lg:w-1/2 xl:w-3/5">
+                    <div class="mb-4 lg:mb-0 w-full justify-center lg:absolute lg:z-10 lg:top-0 {image.wordPosition} lg:h-full flex lg:items-center lg:w-1/2 xl:w-3/5">
                         <h1 class="text-2xl font-test16 font-black italic py-2 px-6 lg:border lg:border-white lg:border-opacity-20 lg:bg-opacity-60 lg:rounded-sm text-white lg:bg-emerald-400">"{image.word}"</h1>
                     </div>
 

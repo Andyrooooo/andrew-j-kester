@@ -5,25 +5,25 @@ export const works = [
         images: [
             {
                 imageSrc: "../../uvusa_images/computer/filter.svg",
-                position: 'justify-end',
+                position: 'lg:justify-end',
                 word: 'Filter Capabilities',
                 wordPosition: 'left-0',
             },
             {
                 imageSrc: "../../uvusa_images/computer/import.svg",
-                position: 'justify-start',
+                position: 'lg:justify-start',
                 word: 'Importing CSV Files',
                 wordPosition: 'right-0',
             },
             {
                 imageSrc: "../../uvusa_images/computer/add.svg",
-                position: 'justify-end',
+                position: 'lg:justify-end',
                 word: 'Add Schedules',
                 wordPosition: 'left-0',
             },
             {
                 imageSrc: "../../uvusa_images/computer/editDelete.svg",
-                position: 'justify-start',
+                position: 'lg:justify-start',
                 word: 'Modify Schedules',
                 wordPosition: 'right-0',
             },
@@ -56,63 +56,63 @@ export const works = [
         images: [
             {
                 imageSrc: "../../fssa_images/computer/login.svg", 
-                position: 'justify-end',
+                position: 'lg:justify-end',
                 word: 'OAuth Login',
                 wordPosition: 'left-0',
 
             },
             {
                 imageSrc: "../../fssa_images/computer/home.svg", 
-                position: 'justify-start',
+                position: 'lg:justify-start',
                 word: 'Interactive Home Page',
                 wordPosition: 'right-0',
 
             },
             {
                 imageSrc: "../../fssa_images/computer/food.svg", 
-                position: 'justify-end',
+                position: 'lg:justify-end',
                 word: 'Restaurant Search',
                 wordPosition: 'left-0',
             },
             {
                 imageSrc: "../../fssa_images/computer/listings.svg", 
-                position: 'justify-start',
+                position: 'lg:justify-start',
                 word: 'Space Listings',
                 wordPosition: 'right-0',
             },
             {
                 imageSrc: "../../fssa_images/computer/listings_closer_look.svg", 
-                position: 'justify-end',
+                position: 'lg:justify-end',
                 word: 'Listing Overview',
                 wordPosition: 'left-0',
             },
             {
                 imageSrc: "../../fssa_images/computer/listings_closer_look2.svg", 
-                position: 'justify-start',
+                position: 'lg:justify-start',
                 word: 'Listing Details',
                 wordPosition: 'right-0',
             },
             {
                 imageSrc: "../../fssa_images/computer/reviews.svg", 
-                position: 'justify-end',
+                position: 'lg:justify-end',
                 word: 'Listing Reviews',
                 wordPosition: 'left-0',
             },
             {
                 imageSrc: "../../fssa_images/computer/write_review.svg", 
-                position: 'justify-start',
+                position: 'lg:justify-start',
                 word: 'Write a Review',
                 wordPosition: 'right-0',
             },
             {
                 imageSrc: "../../fssa_images/computer/user_profile.svg", 
-                position: 'justify-end',
+                position: 'lg:justify-end',
                 word: 'User Profile',
                 wordPosition: 'left-0',
             },
             {
                 imageSrc: "../../fssa_images/computer/reservations.svg", 
-                position: 'justify-start',
+                position: 'lg:justify-start',
                 word: 'Your Reservations',
                 wordPosition: 'right-0',
             },
@@ -147,49 +147,49 @@ export const works = [
         images: [
             {
                 imageSrc: "../../../sta_images/computer/login.svg", 
-                position: 'justify-end',
+                position: 'lg:justify-end',
                 word: 'OAuth Login',
                 wordPosition: 'left-0',
                 
             },
             {
                 imageSrc: "../../../sta_images/computer/home.svg", 
-                position: 'justify-start',
+                position: 'lg:justify-start',
                 word: 'Home Page',
                 wordPosition: 'right-0',
                 
             },
             {
                 imageSrc: "../../../sta_images/computer/component.svg", 
-                position: 'justify-end',
+                position: 'lg:justify-end',
                 word: 'Tutrorial Component',
                 wordPosition: 'left-0',
                 
             },
             {
                 imageSrc: "../../../sta_images/computer/multiple_components.svg", 
-                position: 'justify-start',
+                position: 'lg:justify-start',
                 word: 'Additional Components',
                 wordPosition: 'right-0',
                 
             },
             {
                 imageSrc: "../../../sta_images/computer/terms.svg", 
-                position: 'justify-end',
+                position: 'lg:justify-end',
                 word: 'Svelte Terms',
                 wordPosition: 'left-0',
                 
             },
             {
                 imageSrc: "../../../sta_images/computer/terms_opened.svg", 
-                position: 'justify-start',
+                position: 'lg:justify-start',
                 word: 'Terms Overview',
                 wordPosition: 'right-0',
                 
             },
             {
                 imageSrc: "../../../sta_images/computer/user_profile.svg", 
-                position: 'justify-end',
+                position: 'lg:justify-end',
                 word: 'User Profile',
                 wordPosition: 'left-0',
                 
@@ -225,43 +225,43 @@ export const works = [
         images: [
             {
                 imageSrc: "../../tta_images/computer/tta1.svg", 
-                position: 'justify-end',
+                position: 'lg:justify-end',
                 word: 'Landing Page',
                 wordPosition: 'left-0',
             },
             {
                 imageSrc: "../../tta_images/computer/tta2.svg", 
-                position: 'justify-start',
+                position: 'lg:justify-start',
                 word: 'Categories',
                 wordPosition: 'right-0',
             },
             {
                 imageSrc: "../../tta_images/computer/tta3.svg", 
-                position: 'justify-end',
+                position: 'lg:justify-end',
                 word: 'Projects',
                 wordPosition: 'left-0',
             },
             {
                 imageSrc: "../../tta_images/computer/tta4.svg", 
-                position: 'justify-start',
+                position: 'lg:justify-start',
                 word: 'Notes',
                 wordPosition: 'right-0',
             },
             {
                 imageSrc: "../../tta_images/computer/tta5.svg", 
-                position: 'justify-end',
+                position: 'lg:justify-end',
                 word: 'Time Entries',
                 wordPosition: 'left-0',
             },
             {
                 imageSrc: "../../tta_images/computer/tta6.svg", 
-                position: 'justify-start',
+                position: 'lg:justify-start',
                 word: 'Entry List',
                 wordPosition: 'right-0',
             },
             {
                 imageSrc: "../../tta_images/computer/tta7.svg", 
-                position: 'justify-end',
+                position: 'lg:justify-end',
                 word: 'Edit Entries',
                 wordPosition: 'left-0',
             },
@@ -296,7 +296,7 @@ export const works = [
         images: [
             {
                 imageSrc: "../../nba_images/computer/nba1.svg", 
-                position: 'justify-end',
+                position: 'lg:justify-end',
                 word: 'Landing Page',
                 wordPosition: 'left-0',
 
@@ -304,7 +304,7 @@ export const works = [
             },
             {
                 imageSrc: "../../nba_images/computer/nba2.svg", 
-                position: 'justify-start',
+                position: 'lg:justify-start',
                 word: 'Filter Posts',
                 wordPosition: 'right-0',
 
@@ -312,7 +312,7 @@ export const works = [
             },
             {
                 imageSrc: "../../nba_images/computer/nba3.svg", 
-                position: 'justify-end',
+                position: 'lg:justify-end',
                 word: 'New Post',
                 wordPosition: 'left-0',
 
@@ -320,7 +320,7 @@ export const works = [
             },
             {
                 imageSrc: "../../nba_images/computer/nba4.svg", 
-                position: 'justify-start',
+                position: 'lg:justify-start',
                 word: 'Post Overview',
                 wordPosition: 'right-0',
 
@@ -357,14 +357,14 @@ export const works = [
         images: [
             {
                 imageSrc: "../../vta_images/computer/vta1.svg", 
-                position: 'justify-end',
+                position: 'lg:justify-end',
                 word: 'Landing Page',
                 wordPosition: 'left-0',
 
             },
             {
                 imageSrc: "../../vta_images/computer/vta2.svg", 
-                position: 'justify-start',
+                position: 'lg:justify-start',
                 word: 'Modify Todos',
                 wordPosition: 'right-0',
 
