@@ -3,10 +3,30 @@ export const works = [
         link: 'uvusa',
         name: 'UVU Scheduling App',
         images: [
-            {imageSrc: "../../uvusa_images/filter.jpg"},
-            {imageSrc: "../../uvusa_images/import.jpg"},
-            {imageSrc: "../../uvusa_images/add.jpg"},
-            {imageSrc: "../../uvusa_images/editDelete.jpg"},
+            {
+                imageSrc: "../../uvusa_images/computer/filter.svg",
+                position: 'justify-end',
+                word: 'Filter Capabilities',
+                wordPosition: 'left-0',
+            },
+            {
+                imageSrc: "../../uvusa_images/computer/import.svg",
+                position: 'justify-start',
+                word: 'Importing CSV Files',
+                wordPosition: 'right-0',
+            },
+            {
+                imageSrc: "../../uvusa_images/computer/add.svg",
+                position: 'justify-end',
+                word: 'Add Schedules',
+                wordPosition: 'left-0',
+            },
+            {
+                imageSrc: "../../uvusa_images/computer/editDelete.svg",
+                position: 'justify-start',
+                word: 'Modify Schedules',
+                wordPosition: 'right-0',
+            },
         ],
         logoImage: "../../uvusa_images/uvu_logo.png",
         year: '2024',
@@ -17,8 +37,8 @@ export const works = [
         projOver: '<p class="mb-2">The UVU Scheduling App is a redevelopment of the existing scheduling system used by Utah Valley University instructors. The legacy software was outdated and led instructors to rely on alternative solutions such as Microsoft Excel and Google Sheets, which were distributed as spreadsheets. This process was inefficient and prone to issues, causing significant administrative headaches and scheduling conflicts.</p><p class="mb-2">After consulting with the scheduling coordinator and the design team, we developed a new solution tailored to address the instructors\' needs and streamline the scheduling process. The updated app incorporates features and improvements that not only meet but exceed the instructors\' expectations, ensuring a more effective and user-friendly scheduling experience.</p>',
         projGoals: '<ul class="list-disc pl-6"><li class="mb-4">Develop a robust app and system for instructors to schedule, manage, and maintain their classes efficiently.</li><li class="mb-4 ">Design an intuitive user interface that is visually appealing, easy to navigate, and accessible.</li><li class="mb-4 ">Incorporate advanced filtering options to enhance usability and streamline the scheduling process.</li><li class="mb-4 ">Enable CSV import functionality for pre-scheduled classes to simplify data integration.</li><li class="mb-4 ">Allow instructors to edit, remove, and add schedule entries seamlessly, ensuring full control over class management.</li><li class="mb-4 ">Provide options for schedule distribution in both digital and printable formats for flexibility.</li></ul>',
         projTech: '<p>Sveltekit</p><p>TypeScript</p><p>Node</p><p>Skeleton UI</p><p>MongoDB</p>',
-        projSrcCode: "https://github.com/Andyrooooo/test_uvu_app",
-        projApp: "https://test-uvu-app.vercel.app/",
+        projSrcCode: "https://github.com/Andyrooooo/uvuschedulingapp",
+        projApp: "https://uvuschedulingapp.vercel.app/",
         mockVid: "../../uvusa_images/uvusa_video2.mp4",
         backOne: "../../uvusa_images/uvu_background1.svg",
         backTwo: "../../uvusa_images/uvu_background2.svg",
@@ -34,16 +54,68 @@ export const works = [
         link: 'fssa',
         name: 'Fullstack Svelte App',
         images: [
-            {imageSrc: "../../fssa_images/login.jpg"},
-            {imageSrc: "../../fssa_images/home.jpg"},
-            {imageSrc: "../../fssa_images/food.jpg"},
-            {imageSrc: "../../fssa_images/listings.jpg"},
-            {imageSrc: "../../fssa_images/listing_closer_look.jpg"},
-            {imageSrc: "../../fssa_images/listing_closer_look2.jpg"},
-            {imageSrc: "../../fssa_images/reviews.jpg"},
-            {imageSrc: "../../fssa_images/write_review.jpg"},
-            {imageSrc: "../../fssa_images/user_profile.jpg"},
-            {imageSrc: "../../fssa_images/reservations.jpg"},
+            {
+                imageSrc: "../../fssa_images/computer/login.svg", 
+                position: 'justify-end',
+                word: 'OAuth Login',
+                wordPosition: 'left-0',
+
+            },
+            {
+                imageSrc: "../../fssa_images/computer/home.svg", 
+                position: 'justify-start',
+                word: 'Interactive Home Page',
+                wordPosition: 'right-0',
+
+            },
+            {
+                imageSrc: "../../fssa_images/computer/food.svg", 
+                position: 'justify-end',
+                word: 'Restaurant Search',
+                wordPosition: 'left-0',
+            },
+            {
+                imageSrc: "../../fssa_images/computer/listings.svg", 
+                position: 'justify-start',
+                word: 'Space Listings',
+                wordPosition: 'right-0',
+            },
+            {
+                imageSrc: "../../fssa_images/computer/listings_closer_look.svg", 
+                position: 'justify-end',
+                word: 'Listing Overview',
+                wordPosition: 'left-0',
+            },
+            {
+                imageSrc: "../../fssa_images/computer/listings_closer_look2.svg", 
+                position: 'justify-start',
+                word: 'Listing Details',
+                wordPosition: 'right-0',
+            },
+            {
+                imageSrc: "../../fssa_images/computer/reviews.svg", 
+                position: 'justify-end',
+                word: 'Listing Reviews',
+                wordPosition: 'left-0',
+            },
+            {
+                imageSrc: "../../fssa_images/computer/write_review.svg", 
+                position: 'justify-start',
+                word: 'Write a Review',
+                wordPosition: 'right-0',
+            },
+            {
+                imageSrc: "../../fssa_images/computer/user_profile.svg", 
+                position: 'justify-end',
+                word: 'User Profile',
+                wordPosition: 'left-0',
+            },
+            {
+                imageSrc: "../../fssa_images/computer/reservations.svg", 
+                position: 'justify-start',
+                word: 'Your Reservations',
+                wordPosition: 'right-0',
+            },
         ],
         image: 'fssa_sm.svg',
         logoImage: "../../fssa_images/fssa_logo4.svg",
@@ -73,13 +145,55 @@ export const works = [
         link: 'sta',
         name: 'Svelte Tutorial App',
         images: [
-            {imageSrc: "../../../sta_images/login.jpg"},
-            {imageSrc: "../../../sta_images/home.jpg"},
-            {imageSrc: "../../../sta_images/component.jpg"},
-            {imageSrc: "../../../sta_images/multiple_components.jpg"},
-            {imageSrc: "../../../sta_images/terms.jpg"},
-            {imageSrc: "../../../sta_images/terms_opened.jpg"},
-            {imageSrc: "../../../sta_images/user_profile.jpg"}
+            {
+                imageSrc: "../../../sta_images/computer/login.svg", 
+                position: 'justify-end',
+                word: 'OAuth Login',
+                wordPosition: 'left-0',
+                
+            },
+            {
+                imageSrc: "../../../sta_images/computer/home.svg", 
+                position: 'justify-start',
+                word: 'Home Page',
+                wordPosition: 'right-0',
+                
+            },
+            {
+                imageSrc: "../../../sta_images/computer/component.svg", 
+                position: 'justify-end',
+                word: 'Tutrorial Component',
+                wordPosition: 'left-0',
+                
+            },
+            {
+                imageSrc: "../../../sta_images/computer/multiple_components.svg", 
+                position: 'justify-start',
+                word: 'Additional Components',
+                wordPosition: 'right-0',
+                
+            },
+            {
+                imageSrc: "../../../sta_images/computer/terms.svg", 
+                position: 'justify-end',
+                word: 'Svelte Terms',
+                wordPosition: 'left-0',
+                
+            },
+            {
+                imageSrc: "../../../sta_images/computer/terms_opened.svg", 
+                position: 'justify-start',
+                word: 'Terms Overview',
+                wordPosition: 'right-0',
+                
+            },
+            {
+                imageSrc: "../../../sta_images/computer/user_profile.svg", 
+                position: 'justify-end',
+                word: 'User Profile',
+                wordPosition: 'left-0',
+                
+            }
         ],
         image: 'sta_sm2.svg',
         logoImage: "../../sta_images/sta_logo.svg",
@@ -109,13 +223,48 @@ export const works = [
         link: 'tta',
         name: 'Time Tracker App',
         images: [
-            {imageSrc: "../../tta_images/tta1.jpg"},
-            {imageSrc: "../../tta_images/tta2.jpg"},
-            {imageSrc: "../../tta_images/tta3.jpg"},
-            {imageSrc: "../../tta_images/tta4.jpg"},
-            {imageSrc: "../../tta_images/tta5.jpg"},
-            {imageSrc: "../../tta_images/tta6.jpg"},
-            {imageSrc: "../../tta_images/tta7.jpg"},
+            {
+                imageSrc: "../../tta_images/computer/tta1.svg", 
+                position: 'justify-end',
+                word: 'Landing Page',
+                wordPosition: 'left-0',
+            },
+            {
+                imageSrc: "../../tta_images/computer/tta2.svg", 
+                position: 'justify-start',
+                word: 'Categories',
+                wordPosition: 'right-0',
+            },
+            {
+                imageSrc: "../../tta_images/computer/tta3.svg", 
+                position: 'justify-end',
+                word: 'Projects',
+                wordPosition: 'left-0',
+            },
+            {
+                imageSrc: "../../tta_images/computer/tta4.svg", 
+                position: 'justify-start',
+                word: 'Notes',
+                wordPosition: 'right-0',
+            },
+            {
+                imageSrc: "../../tta_images/computer/tta5.svg", 
+                position: 'justify-end',
+                word: 'Time Entries',
+                wordPosition: 'left-0',
+            },
+            {
+                imageSrc: "../../tta_images/computer/tta6.svg", 
+                position: 'justify-start',
+                word: 'Entry List',
+                wordPosition: 'right-0',
+            },
+            {
+                imageSrc: "../../tta_images/computer/tta7.svg", 
+                position: 'justify-end',
+                word: 'Edit Entries',
+                wordPosition: 'left-0',
+            },
         ],
         image: 'tta_sm.svg',
         logoImage: "../../tta_images/tta_logo.svg",
@@ -145,10 +294,38 @@ export const works = [
         link: 'nba',
         name: 'Nonsense Blog App',
         images: [
-            {imageSrc: "../../nba_images/nba1.jpg"},
-            {imageSrc: "../../nba_images/nba2.jpg"},
-            {imageSrc: "../../nba_images/nba3.jpg"},
-            {imageSrc: "../../nba_images/nba4.jpg"},
+            {
+                imageSrc: "../../nba_images/computer/nba1.svg", 
+                position: 'justify-end',
+                word: 'Landing Page',
+                wordPosition: 'left-0',
+
+
+            },
+            {
+                imageSrc: "../../nba_images/computer/nba2.svg", 
+                position: 'justify-start',
+                word: 'Filter Posts',
+                wordPosition: 'right-0',
+
+
+            },
+            {
+                imageSrc: "../../nba_images/computer/nba3.svg", 
+                position: 'justify-end',
+                word: 'New Post',
+                wordPosition: 'left-0',
+
+
+            },
+            {
+                imageSrc: "../../nba_images/computer/nba4.svg", 
+                position: 'justify-start',
+                word: 'Post Overview',
+                wordPosition: 'right-0',
+
+
+            },
         ],
         image: 'nba_sm.svg',
         logoImage: "../../nba_images/nba_logo.svg",
@@ -178,8 +355,20 @@ export const works = [
         link: 'vta',
         name: 'Vue Todo App',
         images: [
-            {imageSrc: "../../vta_images/vta1.jpg"},
-            {imageSrc: "../../vta_images/vta2.jpg"},
+            {
+                imageSrc: "../../vta_images/computer/vta1.svg", 
+                position: 'justify-end',
+                word: 'Landing Page',
+                wordPosition: 'left-0',
+
+            },
+            {
+                imageSrc: "../../vta_images/computer/vta2.svg", 
+                position: 'justify-start',
+                word: 'Modify Todos',
+                wordPosition: 'right-0',
+
+            },
         ],
         image: 'vta_sm.svg',
         logoImage: "../../vta_images/vta_logo.svg",

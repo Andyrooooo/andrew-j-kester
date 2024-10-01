@@ -15,6 +15,26 @@
     let overviewLimit = 142
     let goalsLimit = 142
     let selectedWorks = []
+    let carouselSections = []
+
+
+    let imagesWithPositions = currentPageData?.images.map((image, index) => {
+        const isEven = index % 2 === 0;
+        return {
+            ...image,
+            imagePosition: isEven ? 'left-full' : 'right-full'
+        }
+    })
+
+    // Temporary variables for binding
+    let tempRefs = [];
+
+    // Reactive statement to update carouselSections
+    $: {
+        tempRefs.forEach((ref, index) => {
+            carouselSections[index] = ref;
+        });
+    }
 
 
     $: {
@@ -29,13 +49,12 @@
     let project
 
     // variables for the video and images when scrolling
-    let scrollAppearCarousel = 'left-full'
+    // let scrollAppearCarousel = 'left-full'
     let scrollAppearVideo = 'right-full'
     let scrollAppearMobileVideo = 'left-full'
     let videoSection
     let videoElement
     let mobileVideoElement
-    let carouselSection
 
     // header for when the page loads
     let onMountButton = 'bottom-[-20%]'
@@ -56,19 +75,11 @@
     
 
     function moveChevronL() {
-        if (moveL === 'translate-x-0') {
-            moveL = 'translate-x-[-0.5rem]'
-        } else {
-            moveL = 'translate-x-0'
-        }
+        moveL = moveL === 'translate-x-0' ? 'translate-x-[-0.5rem]' : 'translate-x-0'
     }
 
     function moveChevronR() {
-        if (moveR === 'translate-x-0') {
-            moveR = 'translate-x-[0.5rem]'
-        } else {
-            moveR = 'translate-x-0'
-        }
+        moveR = moveR === 'translate-x-0' ? 'translate-x-[0.5rem]' : 'translate-x-0'
     }
 
   function goToProject() {
@@ -134,12 +145,24 @@
                             if (mobileVideoElement) {
                                 mobileVideoElement.play()
                             }
-                        } else if (entry.target === carouselSection) {
-                        scrollAppearCarousel = 'left-0'
                         } 
-                        // if (entry.target === carouselSection) {
-                        // scrollAppearCarousel = 'left-0'
-                        // } 
+                        else {
+                            // Check if the entry target is one of the carousel sections
+                            const carouselIndex = carouselSections.indexOf(entry.target);
+                            if (carouselIndex !== -1) {
+                                const isEven = carouselIndex % 2 === 0;
+                                imagesWithPositions = imagesWithPositions.map((image, index) => {
+                                    if (index === carouselIndex) {
+                                        return {
+                                            ...image,
+                                            imagePosition: isEven ? 'left-0' : 'right-0'
+                                        };
+                                    }
+                                    return image;
+                                });
+                            }
+                        }
+                        
                     }
                 })
             }, {
@@ -154,7 +177,11 @@
             observer.observe(pDesc)
 
             observer.observe(videoSection)
-            observer.observe(carouselSection)
+
+            // Observe each carousel section
+            carouselSections.forEach(section => {
+                observer.observe(section);
+            });
 
             getRandomWorks()
 
@@ -183,6 +210,7 @@
         isLoading = true
         goto(`/work/${workLink}`)
     }
+
 </script>
 
 
@@ -342,6 +370,26 @@
     <!----------------------------------------- mockups ---------------------------------------------->
     <div class="my-24" >
 
+        <!----------------------------- mockups of app ----------------------------------->
+        <div class="overflow-x-hidden bg-gradient-to-r {currentPageData?.color} pb-6">
+            
+          
+            {#each imagesWithPositions ?? [] as image, index}
+                <div class="w-full flex {image.position} px-4 py-12 flex-wrap relative" >
+                    <!-- <div class="mb-4 lg:mb-0 w-full justify-center lg:absolute lg:z-10 lg:top-0 lg:left-0 lg:h-full flex lg:items-center lg:w-1/3 xl:w-1/2"> -->
+                    <div class="mb-4 lg:mb-0 w-full justify-center lg:absolute lg:z-10 lg:top-0 lg:{image.wordPosition} lg:h-full flex lg:items-center lg:w-1/2 xl:w-3/5">
+                        <h1 class="text-2xl font-test16 font-black italic py-2 px-6 lg:border lg:border-white lg:border-opacity-20 lg:bg-opacity-60 lg:rounded-sm text-white lg:bg-emerald-400">"{image.word}"</h1>
+                    </div>
+
+                    <div class="max-w-[800px] relative transition-all duration-1000 {image.imagePosition}">
+                        <img src={image.imageSrc} loading="lazy" class="" alt="images of the app">
+                    </div>
+
+                    <div bind:this={tempRefs[index]}></div>
+                </div>
+            {/each}
+        </div>
+
         {#if currentPageData?.mobileAndDesk}
             <!--------------------------- videos including mobile ---------------------------->
             <div class="relative overflow-x-hidden bg-gradient-to-r {currentPageData?.color} py-12 lg:py-24">
@@ -380,7 +428,7 @@
 
                 <div class="absolute z-10 flex w-full top-1/2" bind:this={videoSection}></div>
 
-                <div class="relative flex justify-center items-center h-full w-full top-0 {scrollAppearVideo}  transition-all duration-1000 " >
+                <div class="relative flex justify-center items-center h-full w-full top-0 {scrollAppearVideo}  transition-all duration-1000" >
                     <div class="basis-full lg:px-4 max-w-[1300px]">
 
                         <!--------------------- large screen mockup video for desktop ------------------------->
@@ -392,40 +440,6 @@
                 </div>
             </div>
         {/if}
-
-        <div class="relative w-full h-full flex justify-center items-center overflow-x-hidden font-test16 py-12 bg-gradient-to-r {currentPageData?.color}">
-            <!-- <img src={currentPageData?.backTwo} alt="background color for the carousel of images" class="w-full lg:hidden" loading="lazy">
-            <img src={currentPageData?.backFour} alt="background color for the carousel of images" class="w-full hidden lg:block" loading="lazy"> -->
-            
-            <div class="relative top-0 flex justify-center items-center h-full w-full {scrollAppearCarousel} transition-all duration-1000">
-
-                <!-- carousel on small screens -->
-                <div class="lg:hidden">
-                    <!-- <p class="text-center text-emerald-200 text-lg mb-4 animate-bounce">View Mockups <i class="fa-solid fa-left-right pt-3"></i></p> -->
-
-                    <div class="max-w-[1268px] snap-x scroll-px-0 snap-mandatory scroll-smooth flex gap-4 overflow-x-scroll pb-2">
-                        {#each currentPageData?.images ?? [] as image (image)}
-                            <img src={image.imageSrc} loading="lazy" class="snap-start shrink-0 shadow-sm shadow-zinc-700 border border-zinc-400" alt="images of the app" >
-                        {/each}
-                    </div>
-                </div>
-
-                <!-- carousel on large screens -->
-                <div class="hidden lg:block">
-                   <div class="flex justify-center">
-                    <p class="text-center py-2 px-6 border border-white border-opacity-20 bg-opacity-60 rounded-full text-white bg-zinc-900 text-lg mb-4 animate-bounce flex items-center gap-2">View Mockups <i class="fa-solid fa-left-right"></i></p>
-                   </div>
-
-                    <div class="flex max-w-[1268px] snap-x scroll-px-0 snap-mandatory scroll-smooth gap-4 overflow-x-scroll mx-4 pb-2">
-                        {#each currentPageData?.images ?? [] as image (image)}
-                            <img src={image.imageSrc} loading="lazy" class="snap-start shrink-0 card shadow-sm shadow-zinc-700 border border-zinc-400" alt="images of the app" >
-                        {/each}
-                    </div>
-                </div>
-            </div>
-
-            <div bind:this={carouselSection}></div>
-        </div>
 
     </div>
 
@@ -491,3 +505,45 @@
         text-overflow: ellipsis;
     }
 </style>
+
+
+
+
+
+
+
+<!-- old carousel -->
+
+ <!-- <div class="relative w-full h-full flex justify-center items-center overflow-x-hidden font-test16 py-12 bg-gradient-to-r {currentPageData?.color}"> -->
+            <!-- <img src={currentPageData?.backTwo} alt="background color for the carousel of images" class="w-full lg:hidden" loading="lazy">
+            <img src={currentPageData?.backFour} alt="background color for the carousel of images" class="w-full hidden lg:block" loading="lazy"> -->
+            
+            <!-- <div class="relative top-0 flex justify-center items-center h-full w-full {scrollAppearCarousel} transition-all duration-1000"> -->
+
+                <!-- carousel on small screens -->
+                <!-- <div class="lg:hidden"> -->
+                    <!-- <p class="text-center text-emerald-200 text-lg mb-4 animate-bounce">View Mockups <i class="fa-solid fa-left-right pt-3"></i></p> -->
+
+                    <!-- <div class="max-w-[1268px] snap-x scroll-px-0 snap-mandatory scroll-smooth flex gap-4 overflow-x-scroll pb-2">
+                        {#each currentPageData?.images ?? [] as image (image)}
+                            <img src={image.imageSrc} loading="lazy" class="snap-start shrink-0 shadow-sm shadow-zinc-700 border border-zinc-400" alt="images of the app" >
+                        {/each}
+                    </div>
+                </div> -->
+
+                <!-- carousel on large screens -->
+                <!-- <div class="hidden lg:block">
+                   <div class="flex justify-center">
+                    <p class="text-center py-2 px-6 border border-white border-opacity-20 bg-opacity-60 rounded-full text-white bg-zinc-900 text-lg mb-4 animate-bounce flex items-center gap-2">View Mockups <i class="fa-solid fa-left-right"></i></p>
+                   </div>
+
+                    <div class="flex max-w-[1268px] snap-x scroll-px-0 snap-mandatory scroll-smooth gap-4 overflow-x-scroll mx-4 pb-2">
+                        {#each currentPageData?.images ?? [] as image (image)}
+                            <img src={image.imageSrc} loading="lazy" class="snap-start shrink-0 card shadow-sm shadow-zinc-700 border border-zinc-400" alt="images of the app" >
+                        {/each}
+                    </div>
+                </div> -->
+            <!-- </div> -->
+
+            <!-- <div bind:this={carouselSection}></div> -->
+        <!-- </div> -->
