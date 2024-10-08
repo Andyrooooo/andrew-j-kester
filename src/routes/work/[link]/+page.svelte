@@ -5,6 +5,7 @@
     import { goto } from '$app/navigation'
     import { onMount } from 'svelte'
     import {works} from '../works.js'
+    import {fly} from 'svelte/transition'
 
     let isLoading = true
 
@@ -18,11 +19,18 @@
     let carouselSections = []
 
 
+    // let imagesWithPositions = currentPageData?.images.map((image, index) => {
+    //     const isEven = index % 2 === 0;
+    //     return {
+    //         ...image,
+    //         imagePosition: isEven ? 'left-full' : 'right-full'
+    //     }
+    // })
+
     let imagesWithPositions = currentPageData?.images.map((image, index) => {
-        const isEven = index % 2 === 0;
         return {
             ...image,
-            imagePosition: isEven ? 'left-full' : 'right-full'
+            imagePosition: false
         }
     })
 
@@ -106,8 +114,11 @@
             [filteredWorks[i], filteredWorks[j]] = [filteredWorks[j], filteredWorks[i]];
         }
 
+    // Filter out the current work from the shuffled array
+    let newList = filteredWorks.filter(work => work.link !== currentPageData?.link)
+    
     // Select the first two works from the shuffled array
-    selectedWorks = filteredWorks.slice(0, 2);
+    selectedWorks = newList.slice(0, 2);
   }
 
     onMount(() => {
@@ -155,7 +166,7 @@
                                     if (index === carouselIndex) {
                                         return {
                                             ...image,
-                                            imagePosition: isEven ? 'left-0' : 'right-0'
+                                            imagePosition: true
                                         };
                                     }
                                     return image;
@@ -368,39 +379,73 @@
 
 
     <!----------------------------------------- mockups ---------------------------------------------->
-    <div class="my-24" >
+    <div class="my-24  bg-gradient-to-r {currentPageData?.color} rounded-lg" >
 
-        <!----------------------------- mockups of app ----------------------------------->
-        <div class="overflow-x-hidden bg-gradient-to-r {currentPageData?.color} pb-6">
-            
-          
+        <!----------------------------- mockups of app IMAGES ----------------------------------->
+        <div class="px-4 pt-4">
             {#each imagesWithPositions ?? [] as image, index}
-                <div class="w-full flex {image.position} px-4 py-12 flex-wrap relative" >
-                    <!-- <div class="mb-4 lg:mb-0 w-full justify-center lg:absolute lg:z-10 lg:top-0 lg:left-0 lg:h-full flex lg:items-center lg:w-1/3 xl:w-1/2"> -->
-                    <div class="mb-4 lg:mb-0 w-full justify-center lg:absolute lg:z-10 lg:top-0 {image.wordPosition} lg:h-full flex lg:items-center lg:w-1/2 xl:w-3/5">
-                        <h1 class="text-2xl font-test16 font-black italic py-2 px-6 lg:border lg:border-white lg:border-opacity-20 lg:bg-opacity-60 lg:rounded-sm text-white lg:bg-emerald-400">"{image.word}"</h1>
-                    </div>
+                <div class="w-full flex justify-center">
+                    <div class="flex {image.position} py-4 my-4 flex-wrap relative rounded-lg max-w-[1268px] border border-white border-opacity-20 bg-opacity-60 text-white bg-zinc-900" >
+                        <!-- <div class="mb-4 lg:mb-0 w-full justify-center lg:absolute lg:z-10 lg:top-0 lg:left-0 lg:h-full flex lg:items-center lg:w-1/3 xl:w-1/2"> -->
+                        
+    
+                        <!-- <div class="max-w-[800px] relative transition-all duration-1000 {image.imagePosition} px-4"> -->
+                        <div class="md:w-1/2 relative transition-all duration-1000 px-4 ">
+                            {#if image.imageSrcMobile}
+                                {#if image.imagePosition === true}
+                                    <div class="lg:hidden border border-white border-opacity-10 md:border-none">
+                                        <img in:fly={{ y: 80, duration: 300 }} out:fly={{ y: 80, duration: 200 }} src={image.imageSrcMobile} loading="lazy" class="p-4" alt="images of the app">
+                                    </div>
 
-                    <div class="max-w-[800px] relative transition-all duration-1000 {image.imagePosition}">
-                        <img src={image.imageSrc} loading="lazy" class="" alt="images of the app">
-                    </div>
+                                    <div class="hidden lg:block border border-white border-opacity-10 md:border-none">
+                                        <img in:fly={{ y: 80, duration: 300 }} out:fly={{ y: 80, duration: 200 }} src={image.imageSrc} loading="lazy" class="p-4" alt="images of the app">
+                                    </div>
+                                {:else}
+                                    <div class="lg:hidden border border-white border-opacity-10 md:border-none">
+                                        <img src={image.imageSrcMobile} loading="lazy" class="opacity-0" alt="images of the app">
+                                    </div>
 
-                    <div bind:this={tempRefs[index]}></div>
+                                    <div class="hidden lg:block border border-white border-opacity-10 md:border-none">
+                                        <img src={image.imageSrc} loading="lazy" class="opacity-0" alt="images of the app">
+                                    </div>
+                                {/if}
+                            {:else}
+                                {#if image.imagePosition === true}
+                                    <div class="border border-white border-opacity-10 md:border-none">
+                                        <img in:fly={{ y: 80, duration: 300 }} out:fly={{ y: 80, duration: 200 }} src={image.imageSrc} loading="lazy" class="p-4" alt="images of the app">
+                                    </div>
+                                {:else}
+                                    <div class="border border-white border-opacity-10 md:border-none">
+                                        <img src={image.imageSrc} loading="lazy" class="opacity-0" alt="images of the app">
+                                    </div>
+                                {/if}
+                            {/if}
+                        </div>
+    
+                        <div class="p-4 w-full md:absolute md:z-10 md:top-0 {image.wordPosition} md:h-full md:justify-center md:items-center flex md:w-1/2">
+                            <div class="w-full">
+                                <h1 class="text-2xl font-test16 font-black italic mt-4 md:mt-0 mb-4 text-emerald-400 text-center md:text-left">"{image.word}"</h1>
+                                <p class="">{image.wordDescription}</p>
+                            </div>
+                        </div>
+    
+                        <div bind:this={tempRefs[index]} class='absolute h-10 w-40 bottom-[-2rem] lg:bottom-[-10rem]'></div>
+                    </div>
                 </div>
             {/each}
         </div>
 
         {#if currentPageData?.mobileAndDesk}
             <!--------------------------- videos including mobile ---------------------------->
-            <div class="relative overflow-x-hidden bg-gradient-to-r {currentPageData?.color} py-12 lg:py-24">
+            <div class="relative overflow-x-hidden pb-8 pt-4 lg:py-24">
                 <!-- <img src={currentPageData?.backOne} loading="lazy" alt="background color for the video mockup" class="w-full"> -->
 
                 <div class="absolute z-10 flex w-full top-1/2" bind:this={videoSection}></div>
                 
                 <div class="relative flex items-center justify-center h-full w-full top-0 {scrollAppearVideo} transition-all duration-1000 ">
-                    <div class="lg:px-4 max-w-[1300px] lg:translate-y-[-40px] backdrop-blur-sm bg-zinc-900 lg:bg-inherit">
+                    <div class="px-4 max-w-[1300px] lg:translate-y-[-40px] ">
 
-                        <video class="lg:rounded-lg shadow-md shadow-zinc-700 border border-zinc-400 " loop playsinline bind:this={videoElement}>
+                        <video class="rounded-lg shadow-md shadow-zinc-700 border border-zinc-400 " loop playsinline bind:this={videoElement}>
                             <source src={currentPageData?.mockVid} type="video/mp4" class="">
                         </video>
 
@@ -422,17 +467,17 @@
 
         {:else}
             <!-------------------------- just the desktop video ----------------------------->
-            <div class="relative overflow-x-hidden bg-gradient-to-r {currentPageData?.color} py-12">
+            <div class="relative overflow-x-hidden pb-8 pt-4">
                 <!-- <img src={currentPageData?.backOne} alt="background for the video mockup" class="w-full lg:hidden" loading="lazy">
                 <img src={currentPageData?.backThree} alt="background for the video mockup" class="w-full hidden lg:block" loading="lazy"> -->
 
                 <div class="absolute z-10 flex w-full top-1/2" bind:this={videoSection}></div>
 
                 <div class="relative flex justify-center items-center h-full w-full top-0 {scrollAppearVideo}  transition-all duration-1000" >
-                    <div class="basis-full lg:px-4 max-w-[1300px]">
+                    <div class="basis-full px-4 max-w-[1300px]">
 
                         <!--------------------- large screen mockup video for desktop ------------------------->
-                        <video class="lg:rounded-lg shadow-md shadow-zinc-700 border border-zinc-400 " loop playsinline bind:this={videoElement} >
+                        <video class="rounded-lg shadow-md shadow-zinc-700 border border-zinc-400 " loop playsinline bind:this={videoElement} >
                             <source src={currentPageData?.mockVid} type="video/mp4" class="">
                         </video>
 
