@@ -116,7 +116,7 @@
                     <div class={`relative transition-all duration-500 ${showIcons} h-full items-center`}>
                         <a class={`fa-brands fa-linkedin text-lg hover:text-emerald-400 transition-all duration-500 absolute right-0 z-0 ${restructureOne}`} href="https://www.linkedin.com/in/andrew-j-kester/" target="_blank"></a>
                         <a class={`fa-brands fa-github text-lg hover:text-emerald-400 transition-all duration-500 absolute right-0 z-0 ${restructureTwo}`} href="https://github.com/Andyrooooo/" target="_blank"></a>
-                        <a class={`fa-solid fa-envelope text-lg hover:text-emerald-400 transition-all duration-500 absolute right-0 z-0 ${restructureThree}`} href="mailto:10919987@my.uvu.edu"></a>
+                        <a class={`fa-solid fa-envelope text-lg hover:text-emerald-400 transition-all duration-500 absolute right-0 z-0 ${restructureThree}`} href="mailto:ak_zdk2019@yahoo.com"></a>
                     </div>
                 </div>
 
@@ -124,7 +124,7 @@
                 <div class="hidden sm:flex basis-4/12 justify-end gap-4 pr-2">
                     <a class="fa-brands fa-linkedin text-lg hover:text-emerald-400 transition-all duration-500" href="https://www.linkedin.com/in/andrew-j-kester/" target="_blank"></a>
                     <a class="fa-brands fa-github text-lg hover:text-emerald-400 transition-all duration-500" href="https://github.com/Andyrooooo/" target="_blank"></a>
-                    <a class="fa-solid fa-envelope text-lg hover:text-emerald-400 transition-all duration-500" href="mailto:10919987@my.uvu.edu"></a>
+                    <a class="fa-solid fa-envelope text-lg hover:text-emerald-400 transition-all duration-500" href="mailto:ak_zdk2019@yahoo.com"></a>
                 </div>
             </div>
         </div>
@@ -163,7 +163,7 @@
                     <div class={`relative transition-all duration-500 ${showIcons} h-full items-center`}>
                         <a class={`fa-brands fa-linkedin text-lg hover:text-emerald-400 transition-all duration-500 absolute right-0 z-0 ${restructureOne}`} href="https://www.linkedin.com/in/andrew-j-kester/" target="_blank"></a>
                         <a class={`fa-brands fa-github text-lg hover:text-emerald-400 transition-all duration-500 absolute right-0 z-0 ${restructureTwo}`} href="https://github.com/Andyrooooo/" target="_blank"></a>
-                        <a class={`fa-solid fa-envelope text-lg hover:text-emerald-400 transition-all duration-500 absolute right-0 z-0 ${restructureThree}`} href="mailto:10919987@my.uvu.edu"></a>
+                        <a class={`fa-solid fa-envelope text-lg hover:text-emerald-400 transition-all duration-500 absolute right-0 z-0 ${restructureThree}`} href="mailto:ak_zdk2019@yahoo.com"></a>
                     </div>
                 </div>
 
@@ -171,7 +171,7 @@
                 <div class="hidden sm:flex basis-4/12 justify-end gap-4 pr-2">
                     <a class="fa-brands fa-linkedin text-lg hover:text-emerald-400 transition-all duration-500" href="https://www.linkedin.com/in/andrew-j-kester/" target="_blank"></a>
                     <a class="fa-brands fa-github text-lg hover:text-emerald-400 transition-all duration-500" href="https://github.com/Andyrooooo/" target="_blank"></a>
-                    <a class="fa-solid fa-envelope text-lg hover:text-emerald-400 transition-all duration-500" href="mailto:10919987@my.uvu.edu"></a>
+                    <a class="fa-solid fa-envelope text-lg hover:text-emerald-400 transition-all duration-500" href="mailto:ak_zdk2019@yahoo.com"></a>
                 </div>
             </div>
             
@@ -255,7 +255,7 @@
             <div class="basis-4/12 flex justify-end gap-4">
                 <a class="fa-brands fa-linkedin text-lg hover:text-emerald-400 transition-all duration-500" href="https://www.linkedin.com/in/andrew-j-kester/" target="_blank"></a>
                 <a class="fa-brands fa-github text-lg hover:text-emerald-400 transition-all duration-500" href="https://github.com/Andyrooooo/" target="_blank"></a>
-                <a class="fa-solid fa-envelope text-lg hover:text-emerald-400 transition-all duration-500" href="mailto:10919987@my.uvu.edu"></a>
+                <a class="fa-solid fa-envelope text-lg hover:text-emerald-400 transition-all duration-500" href="mailto:ak_zdk2019@yahoo.com"></a>
             </div>
         </div>
     </div>

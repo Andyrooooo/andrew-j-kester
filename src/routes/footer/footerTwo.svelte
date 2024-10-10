@@ -62,7 +62,7 @@
 <div class="flex justify-center gap-4 pt-4 pb-2">
     <a class="fa-brands fa-linkedin text-lg  hover:text-emerald-400 transition-all duration-500 " href="https://www.linkedin.com/in/andrew-j-kester/" target="_blank"></a>
     <a class="fa-brands fa-github text-lg  hover:text-emerald-400 transition-all duration-500 " href="https://github.com/Andyrooooo/" target="_blank"></a>
-    <a class="fa-solid fa-envelope text-lg  hover:text-emerald-400 transition-all duration-500 " href="mailto:10919987@my.uvu.edu"></a>
+    <a class="fa-solid fa-envelope text-lg  hover:text-emerald-400 transition-all duration-500 " href="mailto:ak_zdk2019@yahoo.com"></a>
 </div>
 
 <p class="text-center text-sm pb-4 font-test16">&#169; 2024 Andrew Kester</p>
