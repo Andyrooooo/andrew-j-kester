@@ -379,7 +379,7 @@
 
 
     <!----------------------------------------- mockups ---------------------------------------------->
-    <div class="my-24  bg-gradient-to-r {currentPageData?.color} rounded-lg" >
+    <div class="my-24  bg-gradient-to-r {currentPageData?.color} rounded-lg lg:mx-4" >
 
         <!----------------------------- mockups of app IMAGES ----------------------------------->
         <div class="px-4 pt-4">

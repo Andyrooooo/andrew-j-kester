@@ -42,7 +42,7 @@
             <div class="flex justify-center relative">
                 <img 
                 src="profilePicture2.png" 
-                class="w-5/12 rounded-full animate-hover border border-opacity-20 bg-emerald-400 border-white" 
+                class="w-5/12 rounded-full animate-hover border border-opacity-20 bg-white bg-opacity-60 backdrop-blur-sm border-white text-white" 
                 loading="lazy" 
                 alt="Andrew Kesters face">
             </div>

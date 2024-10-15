@@ -5,50 +5,56 @@
         {
             link: 'uvusa',
             name: 'UVU Scheduling App',
-            image: 'uvusa_sm.svg',
+            image: 'uvusa_sm_test.png',
             isHovered: false,
             year: '2024',
-            type: 'Web App'
+            type: 'Web App',
+            logo: 'uvusa_images/uvu_logo.png'
         },
         {
             link: 'fssa',
             name: 'Fullstack Svelte App',
-            image: 'fssa_sm.svg',
+            image: 'fssa_sm_test.png',
             isHovered: false,
             year: '2024',
-            type: 'Web App'
+            type: 'Web App',
+            logo: 'fssa_images/fssa_logo4.svg'
         },
         {
             link: 'sta',
             name: 'Svelte Tutorial App',
-            image: 'sta_sm2.svg',
+            image: 'sta_sm_test.png',
             isHovered: false,
             year: '2023',
-            type: 'Web App'
+            type: 'Web App',
+            logo: 'sta_images/sta_logo.svg'
         },
         {
             link: 'tta',
             name: 'Time Tracker App',
-            image: 'tta_sm.svg',
+            image: 'tta_sm_test.png',
             isHovered: false,
             year: '2023',
-            type: 'Web App'
+            type: 'Web App',
+            logo: 'tta_images/tta_logo2.svg'
         },
         {
             link: 'nba',
             name: 'Nonsense Blog App',
-            image: 'nba_sm.svg',
+            image: 'nba_sm_test.png',
             isHovered: false,
             year: '2023',
-            type: 'Web App'
+            type: 'Web App',
+            logo: 'nba_images/nba_logo.svg'
         },
         {
             link: 'vta',
             name: 'Vue Todo App',
-            image: 'vta_sm.svg',
+            image: 'vta_sm_test.png',
             isHovered: false,
             year: '2022',
-            type: 'Web App'
+            type: 'Web App',
+            logo: 'vta_images/vta_logo.svg'
         },
     ]
 
@@ -85,8 +91,8 @@
     
          <!-- Carousel  -->
         <div bind:this={elemWorks} class="snap-x snap-mandatory scroll-smooth flex overflow-x-hidden gap-4">
-            {#each works as { name, image, isHovered, link, year, type }, index (image)}
-                <div class="shrink-0 w-[100%] 2xs:w-[80%] xs:w-[60%] sm:w-[50%] md:w-[35%] lg:w-[30%] xl:w-[25%] snap-start relative z-10 my-12"
+            {#each works as { name, image, isHovered, link, year, type, logo }, index (image)}
+                <div class="shrink-0 w-[100%] 2xs:w-[80%] xs:w-[60%] sm:w-[50%] md:w-[35%] lg:w-[30%] xl:w-[25%] snap-start relative z-10 my-12  rounded-lg "
                 role="banner" 
                 on:mouseenter={() => { 
                 works[index].isHovered = true
@@ -94,22 +100,29 @@
                 on:mouseleave={() => {
                     works[index].isHovered = false
                 }}>
+                    <div class="{isHovered ? 'scale-[.95]' : ''} overflow-x-hidden overflow-y-hidden rounded-lg transition-all duration-700">
+
+                        <div class="w-16 h-16 p-2 absolute z-10 top-0 right-0 border border-white border-opacity-40 bg-zinc-900 bg-opacity-20 backdrop-blur-sm rounded-tr-lg rounded-bl-lg flex justify-center items-center">
+                            <img src={logo} alt="app logo" class="w-12 h-12"/>
+                        </div>
+
                         <img
-                            src={image}
-                            class="rounded-container-token transition-all duration-200 border-2 border-zinc-300 shadow-md shadow-zinc-800 object-dover"
-                            alt={name}
-                            title={name}
-                            loading="lazy"
+                        src={image}
+                        class="rounded-container-token transition-all duration-700 border border-zinc-300 {isHovered ? 'scale-[1.2]' : ''}"
+                        alt={name}
+                        title={name}
+                        loading="lazy"
                         />
-                    {#if isHovered}
-                        <a href="/work/{link}" class="hover:border-2 hover:border-emerald-400 bg-black bg-opacity-60 rounded-lg absolute z-20 inset-0 flex items-center justify-center flex-wrap gap-0 text-2xs sm:text-sm xl:text-4xl hover:backdrop-blur-sm transition-all duration-200" role="button">
-                            <div class="mx-2 font-test16">
-                                <p in:fly={{ y: -80, duration: 300 }} out:fly={{ y: -80, duration: 200 }} class="text-lg font-semibold text-white text-center">{year}</p>
-                                <p in:fly={{ x: -40, duration: 300 }} out:fly={{ x: -40, duration: 200 }} class="text-2xl font-black text-emerald-400 text-center transition-all my-2">{name}</p>
-                                <p in:fly={{ y: 80, duration: 300 }} out:fly={{ y: 80, duration: 200 }} class="text-lg font-semibold text-white text-center">{type}</p>
-                            </div>
-                        </a>
-                    {/if}
+                        {#if isHovered}
+                            <a href="/work/{link}" class=" bg-black bg-opacity-60 absolute z-20 inset-0 flex items-center justify-center flex-wrap gap-0 text-2xs sm:text-sm xl:text-4xl hover:backdrop-blur-sm transition-all duration-700" role="button">
+                                <div class="mx-2 font-test16">
+                                    <p in:fly={{ y: -80, duration: 300 }} out:fly={{ y: -80, duration: 200 }} class="text-lg font-semibold text-white text-center">{year}</p>
+                                    <p in:fly={{ x: -40, duration: 300 }} out:fly={{ x: -40, duration: 200 }} class="text-2xl font-black text-emerald-400 text-center transition-all my-4">{name}</p>
+                                    <p in:fly={{ y: 80, duration: 300 }} out:fly={{ y: 80, duration: 200 }} class="text-lg font-semibold text-white text-center">{type}</p>
+                                </div>
+                            </a>
+                        {/if}
+                    </div>
                 </div>
             {/each}
         </div>
@@ -121,3 +134,10 @@
         </button>
     </div>
 </div>
+
+<!-- <style>
+    .hovered {
+        transform: scale(1.1);
+        object-fit: cover;
+    }
+</style> -->
