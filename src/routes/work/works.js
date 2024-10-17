@@ -5,31 +5,32 @@ export const works = [
         images: [
             {
                 imageSrc: "../../uvusa_images/computer/filter.svg",
+                // imageSrc: "../../uvusa_images/filter.jpg",
                 position: 'justify-end',
                 word: 'Filter Capabilities',
                 wordDescription: 'The filter component enables instructors to adjust their schedules by applying specific criteria, such as professor names, room numbers, and course titles. Users have the option to reset all filters, clear the current data, and start fresh by manually entering new data or importing an updated CSV file for efficient management.',
-                wordPosition: 'md:left-0',
+                wordPosition: 'left-0',
             },
             {
                 imageSrc: "../../uvusa_images/computer/import.svg",
                 position: 'justify-start',
                 word: 'CSV File Import',
                 wordDescription: 'This component allows instructors to upload CSV files containing pre-scheduled classes. The system parses the data and displays it within the scheduling table, streamlining the process and saving valuable time by automating the integration of class information.',
-                wordPosition: 'md:right-0',
+                wordPosition: 'right-0',
             },
             {
                 imageSrc: "../../uvusa_images/computer/add.svg",
                 position: 'justify-end',
                 word: 'Adding New Schedules',
                 wordDescription: 'Instructors can manually create new class schedules using this component by entering details such as course name, professor, and room number. The system also accommodates the addition of custom schedules with flexible class times and days, making it easy to add unique entries for courses and rooms not yet in the system.',
-                wordPosition: 'md:left-0',
+                wordPosition: 'left-0',
             },
             {
                 imageSrc: "../../uvusa_images/computer/editDelete.svg",
                 position: 'justify-start',
                 word: 'Schedule Modification',
                 wordDescription: 'This component provides a comprehensive overview of all current schedules stored in the database. Instructors can easily modify or delete schedules as needed, with changes reflected in real-time to ensure the most up-to-date information is always available.',
-                wordPosition: 'md:right-0',
+                wordPosition: 'right-0',
             },
         ],
         logoImage: "../../uvusa_images/uvu_logo.png",
@@ -50,7 +51,9 @@ export const works = [
         backFour: "../../uvusa_images/uvu_background4.svg",
         mobileAndDesk: false,
         projLink: "../../uvusa_link.svg",
-        color: 'from-uvusaColorSecond to-uvusaColor'
+        textColor: 'text-uvusaColorSecond',
+        color: 'bg-uvusaColorSecond',
+        colorTwo: 'bg-uvusaColor'
     },
 
 
@@ -60,6 +63,7 @@ export const works = [
         images: [
             {
                 imageSrc: "../../fssa_images/computer/login.svg", 
+                // imagedesk: "../../fssa_images/login.jpg",
                 imageSrcMobile: "../../fssa_images/mobile/login.svg",
                 position: 'justify-end',
                 word: 'OAuth Login',
@@ -161,7 +165,10 @@ export const works = [
         mockMobileVid: "../../fssa_images/fssa_video_mobile2.mp4",
         mobileAndDesk: true,
         projLink: "../../fssa_link.svg",
-        color: 'from-fssaColorSecond to-fssaColor'
+        textColor: 'text-fssaColor',
+        color: 'bg-fssaColor',
+        colorTwo: 'bg-fssaColorSecond',
+        mobileDisplay: '../../fssa_images/fssa_mobile_display.svg'
     },
 
 
@@ -253,7 +260,10 @@ export const works = [
         mockMobileVid: "../../sta_images/sta_video_mobile.mp4",
         mobileAndDesk: true,
         projLink: "../../sta_link2.svg",
-        color: 'from-staColor to-white'
+        textColor: 'text-staColor',
+        color: 'bg-staColor',
+        colorTwo: 'bg-staColorSecond',
+        mobileDisplay: '../../sta_images/sta_mobile_display.svg'
     },
 
 
@@ -338,7 +348,10 @@ export const works = [
         mockMobileVid: "../../tta_images/tta_video_mobile.mp4",
         mobileAndDesk: true,
         projLink: "../../tta_link.svg",
-        color: 'from-ttaColor to-white'
+        textColor: 'text-ttaColor',
+        color: 'bg-ttaColor',
+        colorTwo: 'bg-white',
+        mobileDisplay: '../../tta_images/tta_mobile_display.svg'
     },
 
 
@@ -407,7 +420,10 @@ export const works = [
         mockMobileVid: "../../nba_images/nba_video_mobile.mp4",
         mobileAndDesk: true,
         projLink: "../../nba_link.svg",
-        color: 'from-nbaColor to-white'
+        textColor: 'text-nbaColor',
+        color: 'bg-nbaColor',
+        colorTwo: 'bg-white',
+        mobileDisplay: '../../nba_images/nba_mobile_display.svg'
     },
 
 
@@ -454,6 +470,9 @@ export const works = [
         mockMobileVid: "../../vta_images/vta_video_mobile.mp4",
         mobileAndDesk: true,
         projLink: "../../vta_link.svg",
-        color: 'from-vtaColor to-white'
+        textColor: 'text-vtaColor',
+        color: 'bg-vtaColor',
+        colorTwo: 'bg-white',
+        mobileDisplay: '../../vta_images/vta_mobile_display.svg'
     },
 ]

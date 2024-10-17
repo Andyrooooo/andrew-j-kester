@@ -94,11 +94,11 @@
     project.scrollIntoView({behavior: 'smooth'})
   }
 
-//   let isExpanded = false;
+  let mockupIsExpanded = false;
 
-//   function toggleExpansion() {
-//     isExpanded = !isExpanded;
-//   }
+  function toggleMockupExpansion() {
+    mockupIsExpanded = !mockupIsExpanded;
+  }
 
   function goBack() {
     workSection.set(true)
@@ -271,9 +271,9 @@
                 <h1 class="mb-4 text-4xl text-center text-emerald-400">{currentPageData?.name}</h1>
                 <p class="mb-4 italic text-center">{currentPageData?.type}</p>
 
-                <div class="text-xl xs:text-2xl mt-12 mx-4 text-center">
+                <!-- <div class="text-xl xs:text-2xl mt-12 mx-4 text-center">
                     <p class="">{@html currentPageData?.quickDesc}</p>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -379,112 +379,120 @@
 
 
     <!----------------------------------------- mockups ---------------------------------------------->
-    <div class="my-24  bg-gradient-to-r {currentPageData?.color} rounded-lg lg:mx-4" >
+    <div class="my-24 flex justify-center font-test16" >
 
-        <!----------------------------- mockups of app IMAGES ----------------------------------->
-        <div class="px-4 pt-4">
+        <div class=" max-w-[1300px] p-4">
+            <!----------------------------- mockups of app IMAGES ----------------------------------->
             {#each imagesWithPositions ?? [] as image, index}
-                <div class="w-full flex justify-center">
-                    <div class="flex {image.position} py-4 my-4 flex-wrap relative rounded-lg max-w-[1268px] border border-white border-opacity-20 bg-opacity-60 text-white bg-zinc-900" >
-                        <!-- <div class="mb-4 lg:mb-0 w-full justify-center lg:absolute lg:z-10 lg:top-0 lg:left-0 lg:h-full flex lg:items-center lg:w-1/3 xl:w-1/2"> -->
-                        
-    
-                        <!-- <div class="max-w-[800px] relative transition-all duration-1000 {image.imagePosition} px-4"> -->
-                        <div class="md:w-1/2 relative transition-all duration-1000 px-4 ">
+                <div class="mb-6 ">
+                    {#if index % 2 === 0}
+                        <div class="flex flex-col md:flex-row gap-2">
+                            <!-- Title/Description on the left, Image on the right -->
                             {#if image.imageSrcMobile}
-                                {#if image.imagePosition === true}
-                                    <div class="lg:hidden border border-white border-opacity-10 md:border-none">
-                                        <img in:fly={{ y: 80, duration: 300 }} out:fly={{ y: 80, duration: 200 }} src={image.imageSrcMobile} loading="lazy" class="p-4" alt="images of the app">
-                                    </div>
-
-                                    <div class="hidden lg:block border border-white border-opacity-10 md:border-none">
-                                        <img in:fly={{ y: 80, duration: 300 }} out:fly={{ y: 80, duration: 200 }} src={image.imageSrc} loading="lazy" class="p-4" alt="images of the app">
-                                    </div>
-                                {:else}
-                                    <div class="lg:hidden border border-white border-opacity-10 md:border-none">
-                                        <img src={image.imageSrcMobile} loading="lazy" class="opacity-0" alt="images of the app">
-                                    </div>
-
-                                    <div class="hidden lg:block border border-white border-opacity-10 md:border-none">
-                                        <img src={image.imageSrc} loading="lazy" class="opacity-0" alt="images of the app">
-                                    </div>
-                                {/if}
+                                <div class="md:hidden p-4 flex items-center {currentPageData?.color}">
+                                    <img src={image.imageSrcMobile} loading="lazy" class="w-full h-full" alt="images of the app">
+                                </div>
                             {:else}
-                                {#if image.imagePosition === true}
-                                    <div class="border border-white border-opacity-10 md:border-none">
-                                        <img in:fly={{ y: 80, duration: 300 }} out:fly={{ y: 80, duration: 200 }} src={image.imageSrc} loading="lazy" class="p-4" alt="images of the app">
-                                    </div>
-                                {:else}
-                                    <div class="border border-white border-opacity-10 md:border-none">
-                                        <img src={image.imageSrc} loading="lazy" class="opacity-0" alt="images of the app">
-                                    </div>
-                                {/if}
+                                <div class="md:hidden p-4 flex items-center {currentPageData?.color}">
+                                    <img src={image.imageSrc} loading="lazy" class="w-full h-full" alt="images of the app">
+                                </div>
                             {/if}
-                        </div>
-    
-                        <div class="p-4 w-full md:absolute md:z-10 md:top-0 {image.wordPosition} md:h-full md:justify-center md:items-center flex md:w-1/2">
-                            <div class="w-full">
-                                <h1 class="text-2xl font-test16 font-black italic mt-4 md:mt-0 mb-4 text-emerald-400 text-center md:text-left">"{image.word}"</h1>
-                                <p class="">{image.wordDescription}</p>
+
+                            <div class="relative ">
+                                <div class="h-full flex items-center justify-center {currentPageData?.colorTwo}">
+                                    <div class="p-4">
+                                        <h2 class="{currentPageData?.textColor} text-lg mb-4">{image.word}</h2>
+                                        <p class="{currentPageData?.textColor}">{image.wordDescription}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hidden p-4 md:flex items-center {currentPageData?.color}">
+                                <img src={image.imageSrc} loading="lazy" class="w-full h-full" alt="images of the app">
                             </div>
                         </div>
-    
-                        <div bind:this={tempRefs[index]} class='absolute h-10 w-40 bottom-[-2rem] lg:bottom-[-10rem]'></div>
-                    </div>
+                    {:else}
+                        <div class="flex flex-col md:flex-row gap-2">
+                            <!-- Image on the left, Title/Description on the right -->
+                            {#if image.imageSrcMobile}
+                                <div class="p-4 flex items-center md:hidden {currentPageData?.color}">
+                                    <img src={image.imageSrcMobile} loading="lazy" class="w-full h-full" alt="images of the app">
+                                </div>
+
+                                <div class="p-4 hidden md:flex items-center  {currentPageData?.color}">
+                                    <img src={image.imageSrc} loading="lazy" class="w-full h-full" alt="images of the app">
+                                </div>
+                            {:else}
+                                <div class="p-4 flex items-center {currentPageData?.color}">
+                                    <img src={image.imageSrc} loading="lazy" class="w-full h-full" alt="images of the app">
+                                </div>
+                            {/if}
+                            <div class="relative">
+                                <div class="h-full flex items-center justify-center {currentPageData?.colorTwo}">
+                                    <div class="p-4">
+                                        <h2 class="{currentPageData?.textColor} text-lg mb-4">{image.word}</h2>
+                                        <p class="{currentPageData?.textColor}">{image.wordDescription}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {/if}
                 </div>
             {/each}
-        </div>
 
-        {#if currentPageData?.mobileAndDesk}
-            <!--------------------------- videos including mobile ---------------------------->
-            <div class="relative overflow-x-hidden pb-8 pt-4 lg:py-24">
-                <!-- <img src={currentPageData?.backOne} loading="lazy" alt="background color for the video mockup" class="w-full"> -->
-
-                <div class="absolute z-10 flex w-full top-1/2" bind:this={videoSection}></div>
-                
-                <div class="relative flex items-center justify-center h-full w-full top-0 {scrollAppearVideo} transition-all duration-1000 ">
-                    <div class="px-4 max-w-[1300px] lg:translate-y-[-40px] ">
-
-                        <video class="rounded-lg shadow-md shadow-zinc-700 border border-zinc-400 " loop playsinline bind:this={videoElement}>
-                            <source src={currentPageData?.mockVid} type="video/mp4" class="">
-                        </video>
-
-                    </div>
+            <!-- mobile mockup image -->
+            {#if currentPageData?.mobileDisplay}
+                <div class="mb-6">
+                    <img src={currentPageData?.mobileDisplay} loading="lazy" class="" alt="images of the app" >
                 </div>
+            {/if}
 
-                <div class="hidden lg:flex absolute z-20 items-center justify-center h-full w-full top-0 {scrollAppearMobileVideo} transition-all duration-1000">
-                    <div class="px-4 w-full max-w-[1300px] flex justify-end" >
-                        <div class=" lg:w-[180px] lg:translate-y-[125px]">
 
-                            <video class="rounded-lg shadow-md shadow-zinc-700 border-4 border-black float-right" loop playsinline bind:this={mobileVideoElement} >
-                                <source src={currentPageData?.mockMobileVid} type="video/mp4" class="">
+            {#if currentPageData?.mobileAndDesk}
+                <!--------------------------- videos including mobile ---------------------------->
+                <div class="relative {currentPageData?.color} p-4">
+
+                    <div class="absolute z-10 flex w-full top-1/2" bind:this={videoSection}></div>
+                    
+                    <!-- <div class="flex items-center justify-center h-full w-full {scrollAppearVideo} transition-all duration-1000 "> -->
+                    <div class="flex items-center justify-center h-full w-full {scrollAppearVideo} transition-all duration-1000 ">
+                        <div class="">
+
+                            <video class="rounded-lg shadow-md shadow-zinc-700 border border-zinc-400 " loop playsinline bind:this={videoElement}>
+                                <source src={currentPageData?.mockVid} type="video/mp4" class="">
                             </video>
 
                         </div>
                     </div>
                 </div>
-            </div>
 
-        {:else}
-            <!-------------------------- just the desktop video ----------------------------->
-            <div class="relative overflow-x-hidden pb-8 pt-4">
-                <!-- <img src={currentPageData?.backOne} alt="background for the video mockup" class="w-full lg:hidden" loading="lazy">
-                <img src={currentPageData?.backThree} alt="background for the video mockup" class="w-full hidden lg:block" loading="lazy"> -->
-
-                <div class="absolute z-10 flex w-full top-1/2" bind:this={videoSection}></div>
-
-                <div class="relative flex justify-center items-center h-full w-full top-0 {scrollAppearVideo}  transition-all duration-1000" >
-                    <div class="basis-full px-4 max-w-[1300px]">
-
-                        <!--------------------- large screen mockup video for desktop ------------------------->
-                        <video class="rounded-lg shadow-md shadow-zinc-700 border border-zinc-400 " loop playsinline bind:this={videoElement} >
-                            <source src={currentPageData?.mockVid} type="video/mp4" class="">
+                <div class="{scrollAppearMobileVideo} transition-all duration-1000 {currentPageData?.color} p-4 mt-6">
+                    <div class="flex justify-center relative" >
+                        <video class="rounded-[40px] shadow-md shadow-zinc-700 border-[.6rem] border-black max-h-[600px]" loop playsinline bind:this={mobileVideoElement} >
+                            <source src={currentPageData?.mockMobileVid} type="video/mp4" class="">
                         </video>
-
                     </div>
                 </div>
-            </div>
-        {/if}
+
+            {:else}
+                <!-------------------------- just the desktop video ----------------------------->
+                <div class="relative overflow-x-hidden {currentPageData?.color} p-4">
+
+                    <div class="absolute z-10 flex w-full top-1/2" bind:this={videoSection}></div>
+
+                    <div class="relative flex justify-center items-center h-full w-full top-0 transition-all duration-1000" >
+                    <!-- <div class="relative flex justify-center items-center h-full w-full top-0 {scrollAppearVideo}  transition-all duration-1000" > -->
+                        <div class="basis-full">
+
+                            <!--------------------- large screen mockup video for desktop ------------------------->
+                            <video class="rounded-lg shadow-md shadow-zinc-700 border border-zinc-400 " loop playsinline bind:this={videoElement} >
+                                <source src={currentPageData?.mockVid} type="video/mp4" class="">
+                            </video>
+
+                        </div>
+                    </div>
+                </div>
+            {/if}
+        </div>
 
     </div>
 
@@ -592,3 +600,91 @@
 
             <!-- <div bind:this={carouselSection}></div> -->
         <!-- </div> -->
+
+
+
+<!-- 
+        <div class="px-4 pt-4">
+            {#each imagesWithPositions ?? [] as image, index}
+                <div class="w-full flex justify-center">
+                    <div class="flex {image.position} py-4 my-4 flex-wrap relative rounded-lg max-w-[1268px] border border-white border-opacity-20 bg-opacity-60 text-white bg-zinc-900" > -->
+                        <!-- <div class="mb-4 lg:mb-0 w-full justify-center lg:absolute lg:z-10 lg:top-0 lg:left-0 lg:h-full flex lg:items-center lg:w-1/3 xl:w-1/2"> -->
+                        
+    
+                        <!-- <div class="max-w-[800px] relative transition-all duration-1000 {image.imagePosition} px-4"> -->
+                        <!-- <div class="md:w-1/2 relative transition-all duration-1000 px-4 "> -->
+                            <!-- {#if image.imageSrcMobile}
+                                {#if image.imagePosition === true}
+                                    <div class="lg:hidden border border-white border-opacity-10 md:border-none">
+                                        <img in:fly={{ y: 80, duration: 300 }} out:fly={{ y: 80, duration: 200 }} src={image.imageSrcMobile} loading="lazy" class="p-4" alt="images of the app">
+                                    </div>
+
+                                    <div class="hidden lg:block border border-white border-opacity-10 md:border-none">
+                                        <img in:fly={{ y: 80, duration: 300 }} out:fly={{ y: 80, duration: 200 }} src={image.imageSrc} loading="lazy" class="p-4" alt="images of the app">
+                                    </div>
+                                {:else}
+                                    <div class="lg:hidden border border-white border-opacity-10 md:border-none">
+                                        <img src={image.imageSrcMobile} loading="lazy" class="opacity-0" alt="images of the app">
+                                    </div>
+
+                                    <div class="hidden lg:block border border-white border-opacity-10 md:border-none">
+                                        <img src={image.imageSrc} loading="lazy" class="opacity-0" alt="images of the app">
+                                    </div>
+                                {/if}
+                            {:else}
+                                {#if image.imagePosition === true}
+                                    <div class="border border-white border-opacity-10 md:border-none">
+                                        <img in:fly={{ y: 80, duration: 300 }} out:fly={{ y: 80, duration: 200 }} src={image.imageSrc} loading="lazy" class="p-4" alt="images of the app">
+                                    </div>
+                                {:else}
+                                    <div class="border border-white border-opacity-10 md:border-none">
+                                        <img src={image.imageSrc} loading="lazy" class="opacity-0" alt="images of the app">
+                                    </div>
+                                {/if}
+                            {/if}
+                        </div>
+    
+                        <div class="p-4 w-full md:absolute md:z-10 md:top-0 {image.wordPosition} md:h-full md:justify-center md:items-center flex md:w-1/2">
+                            <div class="w-full">
+                                <h1 class="text-2xl font-test16 font-black italic mt-4 md:mt-0 mb-4 text-emerald-400 text-center md:text-left">"{image.word}"</h1>
+                                <p class="">{image.wordDescription}</p>
+                            </div>
+                        </div>
+    
+                        <div bind:this={tempRefs[index]} class='absolute h-10 w-40 bottom-[-2rem] lg:bottom-[-10rem]'></div>
+                    </div>
+                </div>
+            {/each}
+        </div> -->
+
+
+        <!-- attempt number 2 of the mockup display -->
+        <!-- {#each imagesWithPositions ?? [] as image, index}
+        <div class="mb-8 relative">
+            <div class="w-full "> -->
+                <!-- <div class="flex gap-2 mb-2">
+                    <div class="{currentPageData?.colorTwo} rounded-lg flex justify-center items-center p-4 w-1">
+                        <div>
+                            <h2 class="{currentPageData?.textColor} mb-2 text-center">{image.word}</h2>
+                            <p class=" rounded-lg bg-white {currentPageData?.textColor} p-4">{image.wordDescription}</p>
+                        </div>
+                    </div> -->
+                    <!-- <button on:click={toggleMockupExpansion} class="">
+                        <div class="flex {image.position}">
+                            <img src={image.imageSrc} loading="lazy" class=" {currentPageData?.color} p-4 {mockupIsExpanded === true ? 'w-full rounded-lg' : 'w-1/2 rounded-3xl animate-hover'} transition-all duration-300 " alt="images of the app">
+                        </div>
+                    </button> -->
+                <!-- </div> -->
+            <!-- </div>
+            
+            <div class="absolute h-full {currentPageData?.colorTwo} {mockupIsExpanded === true ? 'relative w-full rounded-lg' : `top-0 ${image.wordPosition} rounded-3xl`} animate-hover transition-all duration-300 animate-hover p-4">
+                <div class="">
+                    <h2 class=" ">{image.word}</h2>
+
+                    {#if mockupIsExpanded}
+                        <p class="">{image.wordDescription}</p>
+                    {/if}
+                </div>
+            </div>
+        </div>
+    {/each} -->
